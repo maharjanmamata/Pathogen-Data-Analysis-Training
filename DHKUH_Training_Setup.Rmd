@@ -1,0 +1,234 @@
+---
+title: "Data Analysis Training Setup - DHKUH 062025"
+author: "Heather Amato"
+date: "2025-06-20"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir ="/Users/hkamato/Desktop/GitHub/DHKUH Data Analysis Training")
+
+# Load required packages
+library(tidyverse)
+```
+
+## Simulate TAC data
+```{r tac}
+# Set parameters
+n_targets <- 48
+samples_per_card <- 7
+n_cards <- 20
+household_ids <- paste0("HH", sprintf("%03d", 1:(n_cards * samples_per_card)))
+targets <- c(
+  # Bacteria
+  "Campylobacter", "Salmonella", "Shigella", "E. coli O157", "ETEC", "EPEC", 
+  "EAEC", "STEC", "Vibrio cholerae", "Yersinia enterocolitica",
+  "Clostridium difficile", "Aeromonas", "Helicobacter pylori", 
+  "Listeria monocytogenes", "Bacteroides fragilis",
+
+  # Viruses
+  "Norovirus GI", "Norovirus GII", "Rotavirus A", "Astrovirus", 
+  "Adenovirus 40/41", "Sapovirus", "Enterovirus", "Hepatitis A", "Hepatitis E",
+
+  # Protozoa
+  "Giardia", "Cryptosporidium", "Entamoeba histolytica", 
+  "Blastocystis", "Cyclospora", "Dientamoeba fragilis",
+
+  # Helminths
+  "Ascaris", "Trichuris", "Ancylostoma", "Necator", "Strongyloides",
+
+  # Antibiotic Resistance Genes (optional group)
+  "blaCTX-M", "blaNDM", "mecA", "tetA", "sul1", "qnrS",
+
+  # Fecal markers / process controls
+  "HF183", "CrAssphage", "Sketa22", "BacHum", "MS2", "Spiked_Extraction_Control", "No Template Control"
+)
+
+# Function to simulate Cq values
+simulate_cq <- function() {
+  if (runif(1) < 0.2) {  # 20% chance of being undetected
+    return("Undetermined")
+  } else {
+    return(round(rnorm(1, mean = 30, sd = 2), 2))
+  }
+}
+
+# Function to generate one TAC card worth of data
+simulate_card <- function(card_num, sample_ids) {
+  data <- list()
+  for (i in 1:(samples_per_card + 1)) {  # 7 samples + 1 blank
+    sample_id <- ifelse(i <= samples_per_card, sample_ids[i], "BLANK")
+    well_pos <- paste0("A", i)
+    for (target in targets) {
+      cq <- simulate_cq()
+      amp <- ifelse(cq == "Undetermined", "No Amp", "Amp")
+      result <- ifelse(cq == "Undetermined", "Undetermined", "Positive")
+      amp_score <- ifelse(cq == "Undetermined", 0, round(runif(1, 0.3, 1.0), 2))
+      cq_conf <- ifelse(cq == "Undetermined", 0, round(runif(1, 0.7, 1.0), 2))
+      cq_sd <- ifelse(cq == "Undetermined", NA, round(runif(1, 0.1, 0.5), 2))
+
+      row <- tibble(
+        Well = i,
+        `Well Position` = well_pos,
+        Omit = FALSE,
+        Sample = sample_id,
+        Target = target,
+        Task = "UNKNOWN",
+        Reporter = "FAM",
+        Quencher = "Non Fluorescent",
+        `Amp Status` = amp,
+        `Amp Score` = amp_score,
+        Result = result,
+        `Quality Issues` = "",
+        Cq = as.character(cq),
+        `Cq Confidence` = cq_conf,
+        `Cq Mean` = ifelse(cq == "Undetermined", NA, as.numeric(cq)),
+        `Cq SD` = cq_sd,
+        `Auto Threshold` = TRUE,
+        Threshold = 0.2,
+        `Auto Baseline` = TRUE,
+        `Baseline Start` = 3,
+        `Baseline End` = 49
+      )
+      data <- append(data, list(row))
+    }
+  }
+  bind_rows(data)
+}
+
+# Simulate and save all 20 cards
+output_dir <- "simulated_TAC_cards"
+dir.create(output_dir, showWarnings = FALSE)
+
+for (card_num in 1:n_cards) {
+  sample_range <- ((card_num - 1) * samples_per_card + 1):(card_num * samples_per_card)
+  sample_ids <- household_ids[sample_range]
+  card_data <- simulate_card(card_num, sample_ids)
+
+  write_csv(card_data, file = file.path(output_dir, sprintf("sim_card_%02d.csv", card_num)))
+}
+
+message("Simulation complete. Files saved in: ", output_dir)
+```
+
+```{r survey}
+
+# Create 140 household IDs
+household_ids <- paste0("HH", sprintf("%03d", 1:140))
+
+# Create tole variable: 20 toles with 7 households each
+tole_ids <- paste0("Tole_", sprintf("%02d", 1:20))
+tole_assignment <- rep(tole_ids, each = 7)
+
+# Simulate binary variables with reasonable probabilities
+simulate_binary <- function(n, prob = 0.5) {
+  rbinom(n, 1, prob)
+}
+
+# Simulate survey data
+survey_data <- tibble(
+  household_id = household_ids,
+  tole = tole_assignment,
+
+  # Demographics
+  caregiver_educated = simulate_binary(140, 0.6),
+  crowded_household = simulate_binary(140, 0.4),
+  improved_floor = simulate_binary(140, 0.5),
+  improved_water = simulate_binary(140, 0.7),
+  improved_sanitation = simulate_binary(140, 0.65),
+  handwashing_station = simulate_binary(140, 0.55),
+  owns_animals = simulate_binary(140, 0.8),
+  
+  # Animal ownership
+  owns_cow = simulate_binary(140, 0.8),
+  owns_goat = simulate_binary(140, 0.7),
+  owns_poultry = simulate_binary(140, 0.65),
+  owns_dog = simulate_binary(140, 0.4)
+)
+
+# Biodigester waste use (conditional on animal ownership)
+survey_data <- survey_data %>%
+  mutate(
+    cow_waste_into_digester = if_else(owns_cow == 1, simulate_binary(140, 0.8), 0),
+    goat_waste_into_digester = if_else(owns_goat == 1, simulate_binary(140, 0.3), 0),
+    poultry_waste_into_digester = if_else(owns_poultry == 1, simulate_binary(140, 0.2), 0),
+    dog_waste_into_digester = if_else(owns_dog == 1, simulate_binary(140, 0.1), 0),
+    waste_freq_per_week = sample(0:7, 140, replace = TRUE),
+    biodigester_broken = simulate_binary(140, 0.64),
+    mix_by_hand = simulate_binary(140, 0.4),
+    effluent_resttime_months = sample(0:8, 140, replace = TRUE),
+    effluent_applied_to_crops = simulate_binary(140, 0.8),
+    effluent_applied_by_hand = if_else(effluent_applied_to_crops == 1, simulate_binary(140, 0.6), 0),
+    effluent_applied_crop_1 = if_else(effluent_applied_to_crops == 1, simulate_binary(140, 0.8), 0),
+    effluent_applied_crop_2 = if_else(effluent_applied_to_crops == 1, simulate_binary(140, 0.65), 0),
+    effluent_applied_crop_3 = if_else(effluent_applied_to_crops == 1, simulate_binary(140, 0.7), 0),
+    effluent_applied_crop_4 = if_else(effluent_applied_to_crops == 1, simulate_binary(140, 0.3), 0),
+  )
+
+# Child health
+survey_data <- survey_data %>%
+  mutate(
+    child_has_diarrhea_7d = simulate_binary(140, 0.2)
+  )
+
+# View first few rows
+print(head(survey_data))
+
+# Optionally save as CSV
+write_csv(survey_data, "/Users/hkamato/Desktop/GitHub/DHKUH Data Analysis Training/simulated_data/survey_data_simulated.csv")
+```
+
+```{r idexx}
+
+# Set up household/sample IDs
+household_ids <- paste0("HH", sprintf("%03d", 1:140))
+
+# Helper function to simulate counts
+simulate_quanti_tray_counts <- function(n) {
+  tibble(
+    small_cell_count = sample(0:49, n, replace = TRUE),
+    large_cell_count = sample(0:48, n, replace = TRUE)
+  )
+}
+
+# Simulate Quanti-Tray data for each target
+quanti_data <- tibble(household_id = household_ids)
+
+quanti_data <- quanti_data %>%
+  bind_cols(
+    simulate_quanti_tray_counts(140) %>% rename_with(~paste0("total_coliform_", .)),
+    simulate_quanti_tray_counts(140) %>% rename_with(~paste0("e_coli_", .)),
+    simulate_quanti_tray_counts(140) %>% rename_with(~paste0("ar_total_coliform_", .)),
+    simulate_quanti_tray_counts(140) %>% rename_with(~paste0("ar_e_coli_", .))
+  )
+
+# Simulate ESBL E. coli culture results
+set.seed(123)  # For reproducibility
+esbl_data <- tibble(
+  household_id = household_ids,
+  esbl_e_coli_present = rbinom(140, 1, 0.35),  # 35% positivity
+  esbl_e_coli_cfu = 0
+)
+
+# If present, assign CFU count (0–250)
+esbl_data <- esbl_data %>%
+  mutate(
+    esbl_e_coli_cfu = if_else(esbl_e_coli_present == 1, sample(1:250, 140, replace = TRUE), 0)
+  )
+
+# Combine all microbiological data
+microbiol_data <- quanti_data %>%
+  left_join(esbl_data, by = "household_id")
+
+# View first few rows
+print(head(microbiol_data))
+
+# Optionally save to CSV
+write_csv(microbiol_data, "/Users/hkamato/Desktop/GitHub/DHKUH Data Analysis Training/simulated_data/microbial_data_simulated.csv")
+
+
+
+```
+

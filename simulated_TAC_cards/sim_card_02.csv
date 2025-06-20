@@ -1,0 +1,385 @@
+Well,Well Position,Omit,Sample,Target,Task,Reporter,Quencher,Amp Status,Amp Score,Result,Quality Issues,Cq,Cq Confidence,Cq Mean,Cq SD,Auto Threshold,Threshold,Auto Baseline,Baseline Start,Baseline End
+1,A1,FALSE,HH008,Campylobacter,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Salmonella,UNKNOWN,FAM,Non Fluorescent,Amp,0.79,Positive,,31.55,0.99,31.55,0.24,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Shigella,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,E. coli O157,UNKNOWN,FAM,Non Fluorescent,Amp,0.38,Positive,,32.23,0.83,32.23,0.22,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,ETEC,UNKNOWN,FAM,Non Fluorescent,Amp,0.56,Positive,,29.82,0.86,29.82,0.25,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,EPEC,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,EAEC,UNKNOWN,FAM,Non Fluorescent,Amp,0.59,Positive,,29.72,0.79,29.72,0.48,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,STEC,UNKNOWN,FAM,Non Fluorescent,Amp,0.93,Positive,,30.17,0.84,30.17,0.33,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Vibrio cholerae,UNKNOWN,FAM,Non Fluorescent,Amp,0.45,Positive,,32.68,0.84,32.68,0.41,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Yersinia enterocolitica,UNKNOWN,FAM,Non Fluorescent,Amp,0.48,Positive,,28.96,0.79,28.96,0.29,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Clostridium difficile,UNKNOWN,FAM,Non Fluorescent,Amp,0.46,Positive,,27.78,0.76,27.78,0.47,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Aeromonas,UNKNOWN,FAM,Non Fluorescent,Amp,0.98,Positive,,26.37,0.79,26.37,0.17,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Helicobacter pylori,UNKNOWN,FAM,Non Fluorescent,Amp,0.45,Positive,,29.7,0.72,29.7,0.47,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Listeria monocytogenes,UNKNOWN,FAM,Non Fluorescent,Amp,0.6,Positive,,27.91,0.79,27.91,0.46,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Bacteroides fragilis,UNKNOWN,FAM,Non Fluorescent,Amp,0.83,Positive,,32.14,0.72,32.14,0.46,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Norovirus GI,UNKNOWN,FAM,Non Fluorescent,Amp,0.49,Positive,,30.48,0.86,30.48,0.26,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Norovirus GII,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Rotavirus A,UNKNOWN,FAM,Non Fluorescent,Amp,0.41,Positive,,30.73,0.81,30.73,0.27,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Astrovirus,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Adenovirus 40/41,UNKNOWN,FAM,Non Fluorescent,Amp,0.54,Positive,,28.93,0.76,28.93,0.36,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Sapovirus,UNKNOWN,FAM,Non Fluorescent,Amp,0.53,Positive,,25.61,0.75,25.61,0.22,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Enterovirus,UNKNOWN,FAM,Non Fluorescent,Amp,0.36,Positive,,27.78,0.98,27.78,0.28,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Hepatitis A,UNKNOWN,FAM,Non Fluorescent,Amp,0.58,Positive,,30.85,0.73,30.85,0.11,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Hepatitis E,UNKNOWN,FAM,Non Fluorescent,Amp,0.63,Positive,,29.91,0.87,29.91,0.19,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Giardia,UNKNOWN,FAM,Non Fluorescent,Amp,0.42,Positive,,27.5,0.85,27.5,0.15,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Cryptosporidium,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Entamoeba histolytica,UNKNOWN,FAM,Non Fluorescent,Amp,0.34,Positive,,29.48,0.91,29.48,0.14,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Blastocystis,UNKNOWN,FAM,Non Fluorescent,Amp,0.33,Positive,,30.71,0.87,30.71,0.36,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Cyclospora,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Dientamoeba fragilis,UNKNOWN,FAM,Non Fluorescent,Amp,0.78,Positive,,30.87,0.79,30.87,0.35,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Ascaris,UNKNOWN,FAM,Non Fluorescent,Amp,0.59,Positive,,31.75,0.75,31.75,0.25,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Trichuris,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Ancylostoma,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Necator,UNKNOWN,FAM,Non Fluorescent,Amp,0.58,Positive,,27.91,0.75,27.91,0.47,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Strongyloides,UNKNOWN,FAM,Non Fluorescent,Amp,0.47,Positive,,28.52,0.92,28.52,0.17,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,blaCTX-M,UNKNOWN,FAM,Non Fluorescent,Amp,0.9,Positive,,30.56,0.85,30.56,0.23,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,blaNDM,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,mecA,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,tetA,UNKNOWN,FAM,Non Fluorescent,Amp,0.54,Positive,,27.39,0.82,27.39,0.3,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,sul1,UNKNOWN,FAM,Non Fluorescent,Amp,0.45,Positive,,30.15,0.9,30.15,0.21,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,qnrS,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,HF183,UNKNOWN,FAM,Non Fluorescent,Amp,0.47,Positive,,31.69,0.71,31.69,0.39,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,CrAssphage,UNKNOWN,FAM,Non Fluorescent,Amp,0.48,Positive,,32.37,0.71,32.37,0.48,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Sketa22,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,BacHum,UNKNOWN,FAM,Non Fluorescent,Amp,0.45,Positive,,31.6,0.77,31.6,0.28,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,MS2,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,Spiked_Extraction_Control,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+1,A1,FALSE,HH008,No Template Control,UNKNOWN,FAM,Non Fluorescent,Amp,0.86,Positive,,29.7,0.77,29.7,0.19,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Campylobacter,UNKNOWN,FAM,Non Fluorescent,Amp,0.59,Positive,,30.05,0.98,30.05,0.16,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Salmonella,UNKNOWN,FAM,Non Fluorescent,Amp,0.44,Positive,,29.73,0.88,29.73,0.4,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Shigella,UNKNOWN,FAM,Non Fluorescent,Amp,0.39,Positive,,29.65,0.95,29.65,0.31,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,E. coli O157,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,ETEC,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,EPEC,UNKNOWN,FAM,Non Fluorescent,Amp,0.44,Positive,,27.5,0.89,27.5,0.45,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,EAEC,UNKNOWN,FAM,Non Fluorescent,Amp,0.33,Positive,,31.52,0.89,31.52,0.24,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,STEC,UNKNOWN,FAM,Non Fluorescent,Amp,0.4,Positive,,27.75,0.91,27.75,0.22,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Vibrio cholerae,UNKNOWN,FAM,Non Fluorescent,Amp,0.93,Positive,,32.17,0.73,32.17,0.46,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Yersinia enterocolitica,UNKNOWN,FAM,Non Fluorescent,Amp,0.9,Positive,,27.51,0.8,27.51,0.48,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Clostridium difficile,UNKNOWN,FAM,Non Fluorescent,Amp,0.3,Positive,,27.38,0.73,27.38,0.23,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Aeromonas,UNKNOWN,FAM,Non Fluorescent,Amp,0.38,Positive,,30.17,0.7,30.17,0.25,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Helicobacter pylori,UNKNOWN,FAM,Non Fluorescent,Amp,0.51,Positive,,29.57,0.73,29.57,0.2,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Listeria monocytogenes,UNKNOWN,FAM,Non Fluorescent,Amp,0.98,Positive,,26.29,0.73,26.29,0.25,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Bacteroides fragilis,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Norovirus GI,UNKNOWN,FAM,Non Fluorescent,Amp,0.78,Positive,,26.07,0.71,26.07,0.18,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Norovirus GII,UNKNOWN,FAM,Non Fluorescent,Amp,0.4,Positive,,27.68,0.81,27.68,0.13,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Rotavirus A,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Astrovirus,UNKNOWN,FAM,Non Fluorescent,Amp,0.81,Positive,,28.43,0.93,28.43,0.32,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Adenovirus 40/41,UNKNOWN,FAM,Non Fluorescent,Amp,0.51,Positive,,32.32,0.97,32.32,0.43,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Sapovirus,UNKNOWN,FAM,Non Fluorescent,Amp,0.65,Positive,,30.34,0.92,30.34,0.34,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Enterovirus,UNKNOWN,FAM,Non Fluorescent,Amp,0.99,Positive,,33.45,0.91,33.45,0.47,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Hepatitis A,UNKNOWN,FAM,Non Fluorescent,Amp,0.66,Positive,,30.59,0.75,30.59,0.37,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Hepatitis E,UNKNOWN,FAM,Non Fluorescent,Amp,0.9,Positive,,27.45,0.82,27.45,0.34,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Giardia,UNKNOWN,FAM,Non Fluorescent,Amp,0.4,Positive,,27.8,0.73,27.8,0.25,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Cryptosporidium,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Entamoeba histolytica,UNKNOWN,FAM,Non Fluorescent,Amp,0.74,Positive,,28.98,0.76,28.98,0.38,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Blastocystis,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Cyclospora,UNKNOWN,FAM,Non Fluorescent,Amp,0.98,Positive,,32.36,0.74,32.36,0.23,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Dientamoeba fragilis,UNKNOWN,FAM,Non Fluorescent,Amp,0.32,Positive,,29.25,0.97,29.25,0.18,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Ascaris,UNKNOWN,FAM,Non Fluorescent,Amp,0.38,Positive,,29.62,0.94,29.62,0.23,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Trichuris,UNKNOWN,FAM,Non Fluorescent,Amp,0.43,Positive,,29.05,0.84,29.05,0.49,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Ancylostoma,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Necator,UNKNOWN,FAM,Non Fluorescent,Amp,0.5,Positive,,30.4,0.97,30.4,0.32,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Strongyloides,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,blaCTX-M,UNKNOWN,FAM,Non Fluorescent,Amp,0.32,Positive,,31.84,0.92,31.84,0.35,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,blaNDM,UNKNOWN,FAM,Non Fluorescent,Amp,0.78,Positive,,31.08,0.98,31.08,0.12,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,mecA,UNKNOWN,FAM,Non Fluorescent,Amp,0.68,Positive,,30.93,0.98,30.93,0.11,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,tetA,UNKNOWN,FAM,Non Fluorescent,Amp,0.7,Positive,,30.62,0.84,30.62,0.39,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,sul1,UNKNOWN,FAM,Non Fluorescent,Amp,0.83,Positive,,29.86,0.85,29.86,0.48,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,qnrS,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,HF183,UNKNOWN,FAM,Non Fluorescent,Amp,0.61,Positive,,31.37,0.74,31.37,0.36,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,CrAssphage,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Sketa22,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,BacHum,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,MS2,UNKNOWN,FAM,Non Fluorescent,Amp,0.75,Positive,,28.4,0.8,28.4,0.22,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,Spiked_Extraction_Control,UNKNOWN,FAM,Non Fluorescent,Amp,0.95,Positive,,27.45,0.86,27.45,0.3,TRUE,0.2,TRUE,3,49
+2,A2,FALSE,HH009,No Template Control,UNKNOWN,FAM,Non Fluorescent,Amp,0.88,Positive,,30.61,0.89,30.61,0.26,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Campylobacter,UNKNOWN,FAM,Non Fluorescent,Amp,0.76,Positive,,29.65,0.99,29.65,0.33,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Salmonella,UNKNOWN,FAM,Non Fluorescent,Amp,0.47,Positive,,29.99,0.95,29.99,0.42,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Shigella,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,E. coli O157,UNKNOWN,FAM,Non Fluorescent,Amp,0.39,Positive,,28.52,0.99,28.52,0.49,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,ETEC,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,EPEC,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,EAEC,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,STEC,UNKNOWN,FAM,Non Fluorescent,Amp,0.95,Positive,,32.98,0.77,32.98,0.35,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Vibrio cholerae,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Yersinia enterocolitica,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Clostridium difficile,UNKNOWN,FAM,Non Fluorescent,Amp,0.82,Positive,,29.79,0.81,29.79,0.42,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Aeromonas,UNKNOWN,FAM,Non Fluorescent,Amp,0.95,Positive,,27.84,0.88,27.84,0.19,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Helicobacter pylori,UNKNOWN,FAM,Non Fluorescent,Amp,0.47,Positive,,30.77,0.81,30.77,0.15,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Listeria monocytogenes,UNKNOWN,FAM,Non Fluorescent,Amp,0.97,Positive,,28.44,0.78,28.44,0.17,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Bacteroides fragilis,UNKNOWN,FAM,Non Fluorescent,Amp,0.57,Positive,,31.04,0.82,31.04,0.29,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Norovirus GI,UNKNOWN,FAM,Non Fluorescent,Amp,0.96,Positive,,30.07,0.87,30.07,0.28,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Norovirus GII,UNKNOWN,FAM,Non Fluorescent,Amp,0.73,Positive,,31.25,0.71,31.25,0.46,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Rotavirus A,UNKNOWN,FAM,Non Fluorescent,Amp,0.99,Positive,,27.86,0.77,27.86,0.19,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Astrovirus,UNKNOWN,FAM,Non Fluorescent,Amp,0.57,Positive,,33.89,0.86,33.89,0.35,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Adenovirus 40/41,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Sapovirus,UNKNOWN,FAM,Non Fluorescent,Amp,0.91,Positive,,33.02,0.87,33.02,0.23,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Enterovirus,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Hepatitis A,UNKNOWN,FAM,Non Fluorescent,Amp,0.62,Positive,,30.94,0.79,30.94,0.5,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Hepatitis E,UNKNOWN,FAM,Non Fluorescent,Amp,0.83,Positive,,30.79,0.86,30.79,0.49,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Giardia,UNKNOWN,FAM,Non Fluorescent,Amp,1,Positive,,31.68,0.9,31.68,0.49,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Cryptosporidium,UNKNOWN,FAM,Non Fluorescent,Amp,0.63,Positive,,32.35,0.99,32.35,0.16,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Entamoeba histolytica,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Blastocystis,UNKNOWN,FAM,Non Fluorescent,Amp,0.78,Positive,,29.66,0.74,29.66,0.25,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Cyclospora,UNKNOWN,FAM,Non Fluorescent,Amp,0.32,Positive,,30.99,0.95,30.99,0.22,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Dientamoeba fragilis,UNKNOWN,FAM,Non Fluorescent,Amp,0.97,Positive,,27.72,0.98,27.72,0.26,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Ascaris,UNKNOWN,FAM,Non Fluorescent,Amp,0.31,Positive,,29.84,0.9,29.84,0.39,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Trichuris,UNKNOWN,FAM,Non Fluorescent,Amp,0.54,Positive,,32.13,0.71,32.13,0.39,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Ancylostoma,UNKNOWN,FAM,Non Fluorescent,Amp,0.31,Positive,,30.05,0.94,30.05,0.41,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Necator,UNKNOWN,FAM,Non Fluorescent,Amp,0.97,Positive,,31.66,0.85,31.66,0.37,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Strongyloides,UNKNOWN,FAM,Non Fluorescent,Amp,0.71,Positive,,30.68,0.74,30.68,0.4,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,blaCTX-M,UNKNOWN,FAM,Non Fluorescent,Amp,0.55,Positive,,29.06,0.82,29.06,0.37,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,blaNDM,UNKNOWN,FAM,Non Fluorescent,Amp,0.75,Positive,,32.9,0.86,32.9,0.47,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,mecA,UNKNOWN,FAM,Non Fluorescent,Amp,0.96,Positive,,27.31,0.85,27.31,0.27,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,tetA,UNKNOWN,FAM,Non Fluorescent,Amp,0.41,Positive,,30.54,1,30.54,0.46,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,sul1,UNKNOWN,FAM,Non Fluorescent,Amp,0.69,Positive,,31.8,0.74,31.8,0.18,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,qnrS,UNKNOWN,FAM,Non Fluorescent,Amp,0.47,Positive,,31.06,0.92,31.06,0.48,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,HF183,UNKNOWN,FAM,Non Fluorescent,Amp,0.86,Positive,,27.43,0.84,27.43,0.41,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,CrAssphage,UNKNOWN,FAM,Non Fluorescent,Amp,0.55,Positive,,30.58,0.74,30.58,0.27,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Sketa22,UNKNOWN,FAM,Non Fluorescent,Amp,0.45,Positive,,32.89,0.96,32.89,0.4,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,BacHum,UNKNOWN,FAM,Non Fluorescent,Amp,0.39,Positive,,33.55,0.92,33.55,0.17,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,MS2,UNKNOWN,FAM,Non Fluorescent,Amp,0.9,Positive,,28.67,0.81,28.67,0.29,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,Spiked_Extraction_Control,UNKNOWN,FAM,Non Fluorescent,Amp,0.85,Positive,,30.42,0.82,30.42,0.34,TRUE,0.2,TRUE,3,49
+3,A3,FALSE,HH010,No Template Control,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Campylobacter,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Salmonella,UNKNOWN,FAM,Non Fluorescent,Amp,0.63,Positive,,32.08,0.85,32.08,0.38,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Shigella,UNKNOWN,FAM,Non Fluorescent,Amp,0.76,Positive,,32.28,0.86,32.28,0.37,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,E. coli O157,UNKNOWN,FAM,Non Fluorescent,Amp,0.61,Positive,,31.18,0.83,31.18,0.15,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,ETEC,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,EPEC,UNKNOWN,FAM,Non Fluorescent,Amp,0.72,Positive,,31.43,0.86,31.43,0.31,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,EAEC,UNKNOWN,FAM,Non Fluorescent,Amp,0.32,Positive,,27.37,0.77,27.37,0.12,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,STEC,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Vibrio cholerae,UNKNOWN,FAM,Non Fluorescent,Amp,0.53,Positive,,27.86,0.78,27.86,0.41,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Yersinia enterocolitica,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Clostridium difficile,UNKNOWN,FAM,Non Fluorescent,Amp,0.42,Positive,,28.87,0.72,28.87,0.12,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Aeromonas,UNKNOWN,FAM,Non Fluorescent,Amp,0.93,Positive,,27.27,0.95,27.27,0.14,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Helicobacter pylori,UNKNOWN,FAM,Non Fluorescent,Amp,0.66,Positive,,28.95,0.74,28.95,0.2,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Listeria monocytogenes,UNKNOWN,FAM,Non Fluorescent,Amp,0.8,Positive,,30.61,0.94,30.61,0.48,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Bacteroides fragilis,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Norovirus GI,UNKNOWN,FAM,Non Fluorescent,Amp,0.45,Positive,,28.03,0.71,28.03,0.27,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Norovirus GII,UNKNOWN,FAM,Non Fluorescent,Amp,0.74,Positive,,30.08,0.76,30.08,0.15,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Rotavirus A,UNKNOWN,FAM,Non Fluorescent,Amp,0.63,Positive,,28.17,0.79,28.17,0.37,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Astrovirus,UNKNOWN,FAM,Non Fluorescent,Amp,0.39,Positive,,26.35,0.99,26.35,0.38,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Adenovirus 40/41,UNKNOWN,FAM,Non Fluorescent,Amp,0.67,Positive,,28.61,0.94,28.61,0.28,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Sapovirus,UNKNOWN,FAM,Non Fluorescent,Amp,0.5,Positive,,32.7,0.96,32.7,0.1,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Enterovirus,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Hepatitis A,UNKNOWN,FAM,Non Fluorescent,Amp,0.94,Positive,,29.78,0.85,29.78,0.22,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Hepatitis E,UNKNOWN,FAM,Non Fluorescent,Amp,0.53,Positive,,32.35,0.74,32.35,0.29,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Giardia,UNKNOWN,FAM,Non Fluorescent,Amp,0.65,Positive,,29.8,0.86,29.8,0.11,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Cryptosporidium,UNKNOWN,FAM,Non Fluorescent,Amp,0.62,Positive,,29.1,0.74,29.1,0.14,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Entamoeba histolytica,UNKNOWN,FAM,Non Fluorescent,Amp,0.93,Positive,,32.43,0.8,32.43,0.33,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Blastocystis,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Cyclospora,UNKNOWN,FAM,Non Fluorescent,Amp,0.7,Positive,,29.01,0.72,29.01,0.38,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Dientamoeba fragilis,UNKNOWN,FAM,Non Fluorescent,Amp,0.69,Positive,,31.39,0.82,31.39,0.25,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Ascaris,UNKNOWN,FAM,Non Fluorescent,Amp,0.37,Positive,,29.2,0.77,29.2,0.23,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Trichuris,UNKNOWN,FAM,Non Fluorescent,Amp,0.62,Positive,,30.8,0.79,30.8,0.38,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Ancylostoma,UNKNOWN,FAM,Non Fluorescent,Amp,0.34,Positive,,29.38,0.72,29.38,0.31,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Necator,UNKNOWN,FAM,Non Fluorescent,Amp,0.97,Positive,,30.41,0.73,30.41,0.16,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Strongyloides,UNKNOWN,FAM,Non Fluorescent,Amp,0.37,Positive,,30.02,0.71,30.02,0.48,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,blaCTX-M,UNKNOWN,FAM,Non Fluorescent,Amp,0.82,Positive,,27.89,0.96,27.89,0.23,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,blaNDM,UNKNOWN,FAM,Non Fluorescent,Amp,0.96,Positive,,31.24,0.99,31.24,0.45,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,mecA,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,tetA,UNKNOWN,FAM,Non Fluorescent,Amp,0.81,Positive,,31.88,0.83,31.88,0.33,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,sul1,UNKNOWN,FAM,Non Fluorescent,Amp,0.99,Positive,,30.48,0.75,30.48,0.49,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,qnrS,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,HF183,UNKNOWN,FAM,Non Fluorescent,Amp,0.75,Positive,,28.93,0.72,28.93,0.13,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,CrAssphage,UNKNOWN,FAM,Non Fluorescent,Amp,0.49,Positive,,30.25,0.81,30.25,0.36,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Sketa22,UNKNOWN,FAM,Non Fluorescent,Amp,0.6,Positive,,30.08,0.7,30.08,0.42,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,BacHum,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,MS2,UNKNOWN,FAM,Non Fluorescent,Amp,0.38,Positive,,31.77,0.91,31.77,0.18,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,Spiked_Extraction_Control,UNKNOWN,FAM,Non Fluorescent,Amp,0.59,Positive,,30.54,0.95,30.54,0.43,TRUE,0.2,TRUE,3,49
+4,A4,FALSE,HH011,No Template Control,UNKNOWN,FAM,Non Fluorescent,Amp,0.39,Positive,,28.29,0.97,28.29,0.14,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Campylobacter,UNKNOWN,FAM,Non Fluorescent,Amp,0.49,Positive,,34.06,0.88,34.06,0.16,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Salmonella,UNKNOWN,FAM,Non Fluorescent,Amp,0.62,Positive,,27.01,0.82,27.01,0.16,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Shigella,UNKNOWN,FAM,Non Fluorescent,Amp,0.52,Positive,,30.24,0.92,30.24,0.45,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,E. coli O157,UNKNOWN,FAM,Non Fluorescent,Amp,0.66,Positive,,32.29,0.91,32.29,0.32,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,ETEC,UNKNOWN,FAM,Non Fluorescent,Amp,0.49,Positive,,30.44,0.79,30.44,0.5,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,EPEC,UNKNOWN,FAM,Non Fluorescent,Amp,0.52,Positive,,27.7,0.95,27.7,0.35,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,EAEC,UNKNOWN,FAM,Non Fluorescent,Amp,0.97,Positive,,27.45,0.79,27.45,0.3,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,STEC,UNKNOWN,FAM,Non Fluorescent,Amp,0.83,Positive,,29.68,0.77,29.68,0.19,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Vibrio cholerae,UNKNOWN,FAM,Non Fluorescent,Amp,0.75,Positive,,30.04,0.76,30.04,0.35,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Yersinia enterocolitica,UNKNOWN,FAM,Non Fluorescent,Amp,0.55,Positive,,27.87,0.84,27.87,0.16,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Clostridium difficile,UNKNOWN,FAM,Non Fluorescent,Amp,0.75,Positive,,27.5,0.81,27.5,0.11,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Aeromonas,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Helicobacter pylori,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Listeria monocytogenes,UNKNOWN,FAM,Non Fluorescent,Amp,0.84,Positive,,30.39,0.75,30.39,0.21,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Bacteroides fragilis,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Norovirus GI,UNKNOWN,FAM,Non Fluorescent,Amp,0.77,Positive,,30.19,0.99,30.19,0.41,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Norovirus GII,UNKNOWN,FAM,Non Fluorescent,Amp,0.96,Positive,,28.55,0.71,28.55,0.43,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Rotavirus A,UNKNOWN,FAM,Non Fluorescent,Amp,0.62,Positive,,30.65,0.94,30.65,0.14,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Astrovirus,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Adenovirus 40/41,UNKNOWN,FAM,Non Fluorescent,Amp,0.65,Positive,,31.87,0.9,31.87,0.46,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Sapovirus,UNKNOWN,FAM,Non Fluorescent,Amp,0.73,Positive,,30.76,0.97,30.76,0.4,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Enterovirus,UNKNOWN,FAM,Non Fluorescent,Amp,0.89,Positive,,32.31,0.87,32.31,0.35,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Hepatitis A,UNKNOWN,FAM,Non Fluorescent,Amp,0.79,Positive,,28.8,0.93,28.8,0.15,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Hepatitis E,UNKNOWN,FAM,Non Fluorescent,Amp,0.45,Positive,,30.48,0.99,30.48,0.1,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Giardia,UNKNOWN,FAM,Non Fluorescent,Amp,0.47,Positive,,22.93,0.93,22.93,0.38,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Cryptosporidium,UNKNOWN,FAM,Non Fluorescent,Amp,0.4,Positive,,26.28,0.86,26.28,0.39,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Entamoeba histolytica,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Blastocystis,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Cyclospora,UNKNOWN,FAM,Non Fluorescent,Amp,0.97,Positive,,28.38,0.81,28.38,0.24,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Dientamoeba fragilis,UNKNOWN,FAM,Non Fluorescent,Amp,0.76,Positive,,26.36,0.98,26.36,0.5,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Ascaris,UNKNOWN,FAM,Non Fluorescent,Amp,0.48,Positive,,32.2,0.97,32.2,0.16,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Trichuris,UNKNOWN,FAM,Non Fluorescent,Amp,0.98,Positive,,31.78,0.8,31.78,0.49,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Ancylostoma,UNKNOWN,FAM,Non Fluorescent,Amp,0.71,Positive,,27.49,0.84,27.49,0.33,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Necator,UNKNOWN,FAM,Non Fluorescent,Amp,0.88,Positive,,30.84,0.93,30.84,0.41,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Strongyloides,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,blaCTX-M,UNKNOWN,FAM,Non Fluorescent,Amp,0.56,Positive,,31.19,0.85,31.19,0.48,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,blaNDM,UNKNOWN,FAM,Non Fluorescent,Amp,0.56,Positive,,26.73,0.74,26.73,0.24,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,mecA,UNKNOWN,FAM,Non Fluorescent,Amp,0.95,Positive,,31.01,0.76,31.01,0.15,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,tetA,UNKNOWN,FAM,Non Fluorescent,Amp,0.85,Positive,,32.38,0.92,32.38,0.31,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,sul1,UNKNOWN,FAM,Non Fluorescent,Amp,0.77,Positive,,29.31,0.88,29.31,0.14,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,qnrS,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,HF183,UNKNOWN,FAM,Non Fluorescent,Amp,0.66,Positive,,32.07,0.9,32.07,0.17,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,CrAssphage,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Sketa22,UNKNOWN,FAM,Non Fluorescent,Amp,0.82,Positive,,29.41,0.99,29.41,0.12,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,BacHum,UNKNOWN,FAM,Non Fluorescent,Amp,0.57,Positive,,26.49,0.82,26.49,0.4,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,MS2,UNKNOWN,FAM,Non Fluorescent,Amp,0.7,Positive,,32.75,0.88,32.75,0.43,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,Spiked_Extraction_Control,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+5,A5,FALSE,HH012,No Template Control,UNKNOWN,FAM,Non Fluorescent,Amp,0.31,Positive,,30.5,0.75,30.5,0.16,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Campylobacter,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Salmonella,UNKNOWN,FAM,Non Fluorescent,Amp,0.99,Positive,,28.26,0.82,28.26,0.27,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Shigella,UNKNOWN,FAM,Non Fluorescent,Amp,0.49,Positive,,33.14,0.97,33.14,0.11,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,E. coli O157,UNKNOWN,FAM,Non Fluorescent,Amp,0.4,Positive,,29.43,0.82,29.43,0.29,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,ETEC,UNKNOWN,FAM,Non Fluorescent,Amp,0.6,Positive,,27.26,0.78,27.26,0.11,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,EPEC,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,EAEC,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,STEC,UNKNOWN,FAM,Non Fluorescent,Amp,0.94,Positive,,29.22,0.91,29.22,0.37,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Vibrio cholerae,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Yersinia enterocolitica,UNKNOWN,FAM,Non Fluorescent,Amp,0.75,Positive,,29.28,0.79,29.28,0.42,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Clostridium difficile,UNKNOWN,FAM,Non Fluorescent,Amp,0.54,Positive,,30.32,0.71,30.32,0.22,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Aeromonas,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Helicobacter pylori,UNKNOWN,FAM,Non Fluorescent,Amp,1,Positive,,27.16,0.83,27.16,0.34,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Listeria monocytogenes,UNKNOWN,FAM,Non Fluorescent,Amp,0.71,Positive,,28.33,0.89,28.33,0.41,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Bacteroides fragilis,UNKNOWN,FAM,Non Fluorescent,Amp,0.55,Positive,,32.54,0.83,32.54,0.32,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Norovirus GI,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Norovirus GII,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Rotavirus A,UNKNOWN,FAM,Non Fluorescent,Amp,0.91,Positive,,31.49,0.81,31.49,0.35,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Astrovirus,UNKNOWN,FAM,Non Fluorescent,Amp,0.72,Positive,,28.23,0.93,28.23,0.29,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Adenovirus 40/41,UNKNOWN,FAM,Non Fluorescent,Amp,0.32,Positive,,30.92,0.92,30.92,0.1,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Sapovirus,UNKNOWN,FAM,Non Fluorescent,Amp,0.36,Positive,,27.36,0.99,27.36,0.25,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Enterovirus,UNKNOWN,FAM,Non Fluorescent,Amp,0.79,Positive,,33.01,0.91,33.01,0.18,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Hepatitis A,UNKNOWN,FAM,Non Fluorescent,Amp,0.36,Positive,,27.1,0.84,27.1,0.41,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Hepatitis E,UNKNOWN,FAM,Non Fluorescent,Amp,0.85,Positive,,27.64,0.71,27.64,0.14,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Giardia,UNKNOWN,FAM,Non Fluorescent,Amp,0.32,Positive,,31.01,0.86,31.01,0.14,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Cryptosporidium,UNKNOWN,FAM,Non Fluorescent,Amp,0.51,Positive,,27.02,0.93,27.02,0.42,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Entamoeba histolytica,UNKNOWN,FAM,Non Fluorescent,Amp,0.64,Positive,,31.83,0.8,31.83,0.48,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Blastocystis,UNKNOWN,FAM,Non Fluorescent,Amp,0.76,Positive,,25.14,0.88,25.14,0.21,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Cyclospora,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Dientamoeba fragilis,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Ascaris,UNKNOWN,FAM,Non Fluorescent,Amp,0.35,Positive,,33.62,0.88,33.62,0.38,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Trichuris,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Ancylostoma,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Necator,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Strongyloides,UNKNOWN,FAM,Non Fluorescent,Amp,0.79,Positive,,33.01,0.84,33.01,0.4,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,blaCTX-M,UNKNOWN,FAM,Non Fluorescent,Amp,0.97,Positive,,27.48,0.85,27.48,0.19,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,blaNDM,UNKNOWN,FAM,Non Fluorescent,Amp,0.94,Positive,,31.01,0.72,31.01,0.41,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,mecA,UNKNOWN,FAM,Non Fluorescent,Amp,0.69,Positive,,29.55,0.92,29.55,0.36,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,tetA,UNKNOWN,FAM,Non Fluorescent,Amp,0.87,Positive,,30.11,0.74,30.11,0.44,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,sul1,UNKNOWN,FAM,Non Fluorescent,Amp,0.38,Positive,,27.35,1,27.35,0.46,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,qnrS,UNKNOWN,FAM,Non Fluorescent,Amp,0.96,Positive,,30.36,0.8,30.36,0.1,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,HF183,UNKNOWN,FAM,Non Fluorescent,Amp,0.4,Positive,,30.27,0.88,30.27,0.22,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,CrAssphage,UNKNOWN,FAM,Non Fluorescent,Amp,0.69,Positive,,30.11,0.91,30.11,0.38,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Sketa22,UNKNOWN,FAM,Non Fluorescent,Amp,0.54,Positive,,28.2,0.88,28.2,0.45,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,BacHum,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,MS2,UNKNOWN,FAM,Non Fluorescent,Amp,0.6,Positive,,28.92,0.75,28.92,0.17,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,Spiked_Extraction_Control,UNKNOWN,FAM,Non Fluorescent,Amp,0.48,Positive,,28.73,0.74,28.73,0.46,TRUE,0.2,TRUE,3,49
+6,A6,FALSE,HH013,No Template Control,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Campylobacter,UNKNOWN,FAM,Non Fluorescent,Amp,0.87,Positive,,31.72,0.8,31.72,0.3,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Salmonella,UNKNOWN,FAM,Non Fluorescent,Amp,0.51,Positive,,31.06,0.82,31.06,0.27,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Shigella,UNKNOWN,FAM,Non Fluorescent,Amp,0.36,Positive,,33.41,0.83,33.41,0.11,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,E. coli O157,UNKNOWN,FAM,Non Fluorescent,Amp,0.5,Positive,,29.52,0.78,29.52,0.32,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,ETEC,UNKNOWN,FAM,Non Fluorescent,Amp,0.37,Positive,,30.77,0.76,30.77,0.23,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,EPEC,UNKNOWN,FAM,Non Fluorescent,Amp,0.68,Positive,,29,0.94,29,0.21,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,EAEC,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,STEC,UNKNOWN,FAM,Non Fluorescent,Amp,0.65,Positive,,31.26,0.96,31.26,0.35,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Vibrio cholerae,UNKNOWN,FAM,Non Fluorescent,Amp,0.89,Positive,,28.3,0.88,28.3,0.37,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Yersinia enterocolitica,UNKNOWN,FAM,Non Fluorescent,Amp,0.82,Positive,,31.72,0.75,31.72,0.5,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Clostridium difficile,UNKNOWN,FAM,Non Fluorescent,Amp,0.9,Positive,,29.42,0.96,29.42,0.42,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Aeromonas,UNKNOWN,FAM,Non Fluorescent,Amp,0.39,Positive,,27.55,0.86,27.55,0.45,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Helicobacter pylori,UNKNOWN,FAM,Non Fluorescent,Amp,0.67,Positive,,31.3,0.96,31.3,0.34,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Listeria monocytogenes,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Bacteroides fragilis,UNKNOWN,FAM,Non Fluorescent,Amp,0.84,Positive,,28.42,0.96,28.42,0.17,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Norovirus GI,UNKNOWN,FAM,Non Fluorescent,Amp,0.43,Positive,,30.47,0.84,30.47,0.41,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Norovirus GII,UNKNOWN,FAM,Non Fluorescent,Amp,0.92,Positive,,28.92,0.83,28.92,0.42,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Rotavirus A,UNKNOWN,FAM,Non Fluorescent,Amp,0.95,Positive,,28.23,0.74,28.23,0.46,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Astrovirus,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Adenovirus 40/41,UNKNOWN,FAM,Non Fluorescent,Amp,0.57,Positive,,28.2,0.73,28.2,0.22,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Sapovirus,UNKNOWN,FAM,Non Fluorescent,Amp,0.31,Positive,,29.39,0.8,29.39,0.18,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Enterovirus,UNKNOWN,FAM,Non Fluorescent,Amp,0.47,Positive,,29.34,0.85,29.34,0.26,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Hepatitis A,UNKNOWN,FAM,Non Fluorescent,Amp,0.78,Positive,,30.08,0.71,30.08,0.2,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Hepatitis E,UNKNOWN,FAM,Non Fluorescent,Amp,0.58,Positive,,31.62,0.82,31.62,0.12,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Giardia,UNKNOWN,FAM,Non Fluorescent,Amp,0.96,Positive,,28.95,0.73,28.95,0.5,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Cryptosporidium,UNKNOWN,FAM,Non Fluorescent,Amp,0.54,Positive,,36.3,0.75,36.3,0.38,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Entamoeba histolytica,UNKNOWN,FAM,Non Fluorescent,Amp,0.95,Positive,,26.52,0.89,26.52,0.34,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Blastocystis,UNKNOWN,FAM,Non Fluorescent,Amp,0.77,Positive,,29.27,0.94,29.27,0.35,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Cyclospora,UNKNOWN,FAM,Non Fluorescent,Amp,0.88,Positive,,32.49,1,32.49,0.45,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Dientamoeba fragilis,UNKNOWN,FAM,Non Fluorescent,Amp,0.85,Positive,,31.93,0.81,31.93,0.19,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Ascaris,UNKNOWN,FAM,Non Fluorescent,Amp,0.34,Positive,,26.25,0.94,26.25,0.39,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Trichuris,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Ancylostoma,UNKNOWN,FAM,Non Fluorescent,Amp,0.66,Positive,,30.09,0.86,30.09,0.3,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Necator,UNKNOWN,FAM,Non Fluorescent,Amp,0.64,Positive,,28.44,0.83,28.44,0.44,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Strongyloides,UNKNOWN,FAM,Non Fluorescent,Amp,0.33,Positive,,28.92,0.92,28.92,0.14,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,blaCTX-M,UNKNOWN,FAM,Non Fluorescent,Amp,0.63,Positive,,29.9,0.89,29.9,0.22,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,blaNDM,UNKNOWN,FAM,Non Fluorescent,Amp,0.89,Positive,,29.66,0.89,29.66,0.27,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,mecA,UNKNOWN,FAM,Non Fluorescent,Amp,0.45,Positive,,34.52,0.81,34.52,0.13,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,tetA,UNKNOWN,FAM,Non Fluorescent,Amp,0.99,Positive,,28.99,0.89,28.99,0.38,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,sul1,UNKNOWN,FAM,Non Fluorescent,Amp,0.6,Positive,,33.08,0.82,33.08,0.1,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,qnrS,UNKNOWN,FAM,Non Fluorescent,Amp,0.39,Positive,,31.29,0.77,31.29,0.35,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,HF183,UNKNOWN,FAM,Non Fluorescent,Amp,0.98,Positive,,24.14,0.85,24.14,0.21,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,CrAssphage,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Sketa22,UNKNOWN,FAM,Non Fluorescent,Amp,0.56,Positive,,27.44,0.91,27.44,0.31,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,BacHum,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,MS2,UNKNOWN,FAM,Non Fluorescent,Amp,0.78,Positive,,31.43,0.94,31.43,0.43,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,Spiked_Extraction_Control,UNKNOWN,FAM,Non Fluorescent,Amp,0.98,Positive,,26.45,0.82,26.45,0.19,TRUE,0.2,TRUE,3,49
+7,A7,FALSE,HH014,No Template Control,UNKNOWN,FAM,Non Fluorescent,Amp,0.58,Positive,,30.43,0.74,30.43,0.32,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Campylobacter,UNKNOWN,FAM,Non Fluorescent,Amp,0.75,Positive,,30.89,0.81,30.89,0.31,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Salmonella,UNKNOWN,FAM,Non Fluorescent,Amp,0.88,Positive,,31.13,0.82,31.13,0.24,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Shigella,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,E. coli O157,UNKNOWN,FAM,Non Fluorescent,Amp,0.58,Positive,,30.58,0.8,30.58,0.49,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,ETEC,UNKNOWN,FAM,Non Fluorescent,Amp,0.49,Positive,,31.46,0.98,31.46,0.36,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,EPEC,UNKNOWN,FAM,Non Fluorescent,Amp,0.75,Positive,,32.35,0.98,32.35,0.3,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,EAEC,UNKNOWN,FAM,Non Fluorescent,Amp,0.8,Positive,,29.45,0.79,29.45,0.39,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,STEC,UNKNOWN,FAM,Non Fluorescent,Amp,0.61,Positive,,26.98,0.73,26.98,0.47,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Vibrio cholerae,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Yersinia enterocolitica,UNKNOWN,FAM,Non Fluorescent,Amp,0.8,Positive,,29.79,0.85,29.79,0.35,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Clostridium difficile,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Aeromonas,UNKNOWN,FAM,Non Fluorescent,Amp,0.37,Positive,,31.81,0.77,31.81,0.1,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Helicobacter pylori,UNKNOWN,FAM,Non Fluorescent,Amp,0.69,Positive,,27.42,0.89,27.42,0.29,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Listeria monocytogenes,UNKNOWN,FAM,Non Fluorescent,Amp,0.46,Positive,,29.39,0.96,29.39,0.45,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Bacteroides fragilis,UNKNOWN,FAM,Non Fluorescent,Amp,0.4,Positive,,32.36,0.98,32.36,0.34,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Norovirus GI,UNKNOWN,FAM,Non Fluorescent,Amp,0.92,Positive,,27.79,0.97,27.79,0.34,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Norovirus GII,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Rotavirus A,UNKNOWN,FAM,Non Fluorescent,Amp,0.69,Positive,,30.57,0.97,30.57,0.19,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Astrovirus,UNKNOWN,FAM,Non Fluorescent,Amp,0.89,Positive,,32.02,0.89,32.02,0.35,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Adenovirus 40/41,UNKNOWN,FAM,Non Fluorescent,Amp,0.95,Positive,,28.76,0.73,28.76,0.49,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Sapovirus,UNKNOWN,FAM,Non Fluorescent,Amp,0.93,Positive,,30.77,0.72,30.77,0.32,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Enterovirus,UNKNOWN,FAM,Non Fluorescent,Amp,0.37,Positive,,29.39,0.72,29.39,0.39,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Hepatitis A,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Hepatitis E,UNKNOWN,FAM,Non Fluorescent,Amp,0.81,Positive,,29.53,0.87,29.53,0.22,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Giardia,UNKNOWN,FAM,Non Fluorescent,Amp,0.91,Positive,,27.06,0.97,27.06,0.15,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Cryptosporidium,UNKNOWN,FAM,Non Fluorescent,Amp,0.91,Positive,,27.51,0.74,27.51,0.48,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Entamoeba histolytica,UNKNOWN,FAM,Non Fluorescent,Amp,0.53,Positive,,32.43,0.89,32.43,0.46,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Blastocystis,UNKNOWN,FAM,Non Fluorescent,Amp,0.6,Positive,,29.34,0.92,29.34,0.35,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Cyclospora,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Dientamoeba fragilis,UNKNOWN,FAM,Non Fluorescent,Amp,0.63,Positive,,28.63,0.96,28.63,0.18,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Ascaris,UNKNOWN,FAM,Non Fluorescent,Amp,0.63,Positive,,30.49,0.92,30.49,0.35,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Trichuris,UNKNOWN,FAM,Non Fluorescent,Amp,0.92,Positive,,32.09,0.97,32.09,0.37,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Ancylostoma,UNKNOWN,FAM,Non Fluorescent,Amp,0.91,Positive,,31.62,0.94,31.62,0.44,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Necator,UNKNOWN,FAM,Non Fluorescent,Amp,0.51,Positive,,29.9,0.84,29.9,0.37,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Strongyloides,UNKNOWN,FAM,Non Fluorescent,Amp,0.48,Positive,,30.12,0.98,30.12,0.43,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,blaCTX-M,UNKNOWN,FAM,Non Fluorescent,Amp,0.77,Positive,,30.25,0.94,30.25,0.4,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,blaNDM,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,mecA,UNKNOWN,FAM,Non Fluorescent,Amp,0.87,Positive,,27.83,0.8,27.83,0.35,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,tetA,UNKNOWN,FAM,Non Fluorescent,Amp,0.76,Positive,,28.98,0.97,28.98,0.18,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,sul1,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,qnrS,UNKNOWN,FAM,Non Fluorescent,Amp,0.53,Positive,,29.63,0.97,29.63,0.24,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,HF183,UNKNOWN,FAM,Non Fluorescent,Amp,0.87,Positive,,29.03,0.95,29.03,0.42,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,CrAssphage,UNKNOWN,FAM,Non Fluorescent,Amp,0.45,Positive,,31.97,0.8,31.97,0.23,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Sketa22,UNKNOWN,FAM,Non Fluorescent,Amp,0.82,Positive,,28.94,0.79,28.94,0.15,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,BacHum,UNKNOWN,FAM,Non Fluorescent,Amp,0.51,Positive,,32.13,0.77,32.13,0.21,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,MS2,UNKNOWN,FAM,Non Fluorescent,Amp,0.64,Positive,,29.9,0.94,29.9,0.36,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,Spiked_Extraction_Control,UNKNOWN,FAM,Non Fluorescent,No Amp,0,Undetermined,,Undetermined,0,NA,NA,TRUE,0.2,TRUE,3,49
+8,A8,FALSE,BLANK,No Template Control,UNKNOWN,FAM,Non Fluorescent,Amp,0.77,Positive,,28.75,0.95,28.75,0.29,TRUE,0.2,TRUE,3,49
