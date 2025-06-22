@@ -1,0 +1,179 @@
+---
+title: 'Script 1: Data Processing (Answers Version)'
+author: "Heather Amato"
+date: "2025-06-22"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# Load libraries
+library(here)
+library(tidyverse)
+library(dplyr)
+library(quantitray)
+```
+
+#### Read data into RStudio
+```{r read.dat}
+here()
+
+microbio_df <- read_csv(here("simulated_data", "microbial_data_simulated.csv"))
+
+tac_folder <- here("simulated_data", "simulated_cards")
+
+tac_raw <- list.files(tac_folder, full.names = TRUE, pattern = "\\.csv$") %>%
+  map_dfr(read_csv, .id = "source_file", show_col_types = FALSE)
+```
+
+## MICROBIAL DATA
+#### Check micro (IDEXX) data format
+```{r micro.check}
+names(microbio_df)
+summary(microbio_df)
+head(microbio_df, n=8)
+unique(microbio_df$sample_id) %>% length()
+table(microbio_df$sample_type)
+```
+
+#### Clean and process microbio dataset
+```{r clean.micro}
+microbio_clean <- microbio_df %>%
+  mutate(
+    household_id = str_extract(sample_id, "HH\\d+"),
+    sample_type = str_extract(sample_id, "effluent|compost|produce"),
+    wet_soil_mass = wet_weight - plate_weight,
+    dry_soil_mass = dry_weight - plate_weight,
+    soil_moisture = (wet_soil_mass - dry_soil_mass) / dry_soil_mass * 100
+  ) %>%
+  dplyr::select(
+    -c(sample_id, plate_weight, wet_weight, dry_weight, wet_soil_mass, dry_soil_mass)
+  )
+
+table(microbio_clean$sample_type)
+summary(microbio_clean$soil_moisture)
+```
+
+#### Estimate Most Probable Number (MPN) from IDEXX data
+```{r mpn}
+microbio_clean <- microbio_clean %>%
+  mutate(
+    tc_mpn = quantify_mpn(total_coliform_large_cell_count, total_coliform_small_cell_count, method = "qt-2000"),
+    tc_mpn_lo = quantify_95lo(total_coliform_large_cell_count, total_coliform_small_cell_count, method = "qt-2000"),
+    tc_mpn_hi = quantify_95hi(total_coliform_large_cell_count, total_coliform_small_cell_count, method = "qt-2000"),
+
+    ecoli_mpn = quantify_mpn(e_coli_large_cell_count, e_coli_small_cell_count, method = "qt-2000"),
+    ecoli_mpn_lo = quantify_95lo(e_coli_large_cell_count, e_coli_small_cell_count, method = "qt-2000"),
+    ecoli_mpn_hi = quantify_95hi(e_coli_large_cell_count, e_coli_small_cell_count, method = "qt-2000"),
+
+    ar_tc_mpn = quantify_mpn(ar_total_coliform_large_cell_count, ar_total_coliform_small_cell_count, method = "qt-2000"),
+    ar_tc_mpn_lo = quantify_95lo(ar_total_coliform_large_cell_count, ar_total_coliform_small_cell_count, method = "qt-2000"),
+    ar_tc_mpn_hi = quantify_95hi(ar_total_coliform_large_cell_count, ar_total_coliform_small_cell_count, method = "qt-2000"),
+
+    ar_ecoli_mpn = quantify_mpn(ar_e_coli_large_cell_count, ar_e_coli_small_cell_count, method = "qt-2000"),
+    ar_ecoli_mpn_lo = quantify_95lo(ar_e_coli_large_cell_count, ar_e_coli_small_cell_count, method = "qt-2000"),
+    ar_ecoli_mpn_hi = quantify_95hi(ar_e_coli_large_cell_count, ar_e_coli_small_cell_count, method = "qt-2000")
+  )
+
+microbio_clean <- microbio_clean %>%
+  mutate(across(everything(), ~replace_na(.x, 0))) %>%
+  mutate(
+    tc_detect = if_else(tc_mpn > 0, 1, 0),
+    ar_tc_detect = if_else(ar_tc_mpn > 0, 1, 0),
+    ec_detect = if_else(ecoli_mpn > 0, 1, 0),
+    ar_ec_detect = if_else(ar_ecoli_mpn > 0, 1, 0)
+  )
+
+table(microbio_clean$tc_detect)
+table(microbio_clean$ar_tc_detect)
+table(microbio_clean$ec_detect)
+table(microbio_clean$ar_ec_detect)
+```
+
+#### Transform ESBL CFU results
+```{r plot.cfu}
+hist(microbio_clean$esbl_e_coli_cfu)
+```
+
+```{r adjust.esbl}
+microbio_clean2 <- microbio_clean %>%
+  mutate(moisture_fraction = soil_moisture / 100) %>%
+  mutate(esbl_e_coli_cfu_adj = if_else(esbl_e_coli_cfu == 0, 0.5, esbl_e_coli_cfu),
+         adjusted_esbl_cfu = case_when(
+           sample_type %in% c("effluent", "compost") ~ esbl_e_coli_cfu_adj / (1 - moisture_fraction) / 2,
+           sample_type == "produce" ~ esbl_e_coli_cfu_adj / 2,
+           TRUE ~ NA_real_ ),
+         log_adjusted_esbl_cfu = log10(adjusted_esbl_cfu) + 1)
+
+hist(microbio_clean2$adjusted_esbl_cfu)
+hist(microbio_clean2$log_adjusted_esbl_cfu)
+```
+
+``` {r hist.esbl.samples}
+ggplot(microbio_clean2, aes(x = log_adjusted_esbl_cfu, fill = sample_type)) +
+  geom_histogram(bins = 30, alpha = 0.6, position = "identity") +
+  theme_minimal()
+```
+
+#### Transform MPN results
+```{r plot.mpn}
+hist(microbio_clean2$tc_mpn)
+hist(microbio_clean2$ecoli_mpn)
+hist(microbio_clean2$ar_tc_mpn)
+hist(microbio_clean2$ar_ecoli_mpn)
+```
+
+```{r adjust.mpn}
+microbio_clean2 <- microbio_clean2 %>%
+  mutate(across(c(tc_mpn, ar_tc_mpn, ecoli_mpn, ar_ecoli_mpn),
+                ~ if_else(. == 0, 0.5, .),
+                .names = "{.col}_adj")) %>%
+  mutate(across(matches("_adj$"),
+                ~ if_else(sample_type %in% c("compost", "effluent"), . / (1 - moisture_fraction) / 2, . / 2),
+                .names = "adjusted_{.col}")) %>%
+  mutate(across(matches("^adjusted_.*_adj$"), ~ log10(.) + 1, .names = "log_{.col}"))
+
+hist(microbio_clean2$log_adjusted_tc_mpn_adj)
+hist(microbio_clean2$log_adjusted_ecoli_mpn_adj)
+hist(microbio_clean2$log_adjusted_ar_ecoli_mpn_adj)
+```
+
+## TAC DATA
+#### Check TAC data format
+```{r}
+names(tac_raw)
+summary(tac_raw)
+head(tac_raw, n=10)
+unique(tac_raw$Sample) %>% length()
+unique(tac_raw$Sample[grepl("NTC", tac_raw$Sample)]) %>% length()
+unique(tac_raw$Sample[grepl("NTC", tac_raw$Sample) & tac_raw$Result == "Positive"]) %>% length()
+```
+
+#### Clean TAC data
+```{r clean.tac}
+tac_clean <- tac_raw %>%
+  filter(!grepl("NTC", Sample, ignore.case = TRUE)) %>%
+  mutate(
+    household_id = str_extract(Sample, "HH\\d+"),
+    sample_type = str_extract(Sample, "effluent|compost|produce"),
+    detect = if_else(Result == "Positive", 1, 0)
+  )
+View(tac_clean)
+```
+
+## Save final datasets
+```{r final.data}
+microbio_clean3 <- microbio_clean2 %>%
+  select(household_id, sample_type, soil_moisture, esbl_ec_cfu = esbl_e_coli_cfu,
+         log_adj_esbl_ecoli = log_adjusted_esbl_cfu, esbl_ecoli_detect = esbl_e_coli_present,
+         log_adj_tc_mpn = log_adjusted_tc_mpn_adj, log_adj_ec_mpn = log_adjusted_ecoli_mpn_adj,
+         log_adj_ar_tc_mpn = log_adjusted_ar_tc_mpn_adj, log_adj_ar_ec_mpn = log_adjusted_ar_ecoli_mpn_adj,
+         tc_detect, ec_detect, ar_tc_detect, ar_ec_detect)
+
+write_csv(microbio_clean3, here("clean_data", "microbial_data_cleaned.csv")) # clean_data is folder in current directory
+
+write_csv(tac_clean %>%
+            select(household_id, sample_type, Target, Well, Cq, Cq_sd = `Cq SD`, Result, detect),
+          here("clean_data", "tac_data_cleaned.csv"))
+```
