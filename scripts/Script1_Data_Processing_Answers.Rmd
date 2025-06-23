@@ -102,7 +102,7 @@ microbio_clean2 <- microbio_clean %>%
   mutate(esbl_e_coli_cfu_adj = if_else(esbl_e_coli_cfu == 0, 0.5, esbl_e_coli_cfu),
          adjusted_esbl_cfu = case_when(
            sample_type %in% c("effluent", "compost") ~ esbl_e_coli_cfu_adj / (1 - moisture_fraction) / 2,
-           sample_type == "produce" ~ esbl_e_coli_cfu_adj / 2,
+           sample_type == "produce" ~ esbl_e_coli_cfu_adj,
            TRUE ~ NA_real_ ),
          log_adjusted_esbl_cfu = log10(adjusted_esbl_cfu) + 1)
 

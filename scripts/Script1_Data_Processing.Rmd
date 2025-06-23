@@ -8,26 +8,38 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
+# Install packages
+#install.packages(c("here","tidyverse","dplyr","quantitray","readxl"))
+
 # Load libraries
 library(here)
 library(tidyverse)
 library(dplyr)
 library(quantitray)
+library(readxl)
+
+# Check current directory & set new directory if needed
+here()
+setwd("/Users/hkamato/Desktop/GitHub/Pathogen-Data-Analysis-Training")
+here() ## won't change directory keeps loading old file path
 ```
 
+## Training Module 1. Microbiology lab results and qPCR data cleaning
+In this session, we will clean and process .csv files including 
+
 #### Read data into RStudio
+We will be using the here() package which relates all file paths to the directory in which this script is stored. This makes it easier for people to collaborate across computers, as long as the folder structure is the same. We recommend storing all data on the cloud (Box or Drive) and using the desktop Box/Drive app to be able to directly access your Box/Drive folders from your local computer. For this workshop, you will be utilizing the folder on your desktop that you created with the forked GitHub repository.   
 ```{r read.dat}
-# Check working directory
-here()
 
 # Read microbiological data
+# (there are also packages you can install and load, like read_xl(), for reading .xlsx files)
 microbio_df <- read_csv(here("simulated_data", "microbial_data_simulated.csv"))
 
 # Folder path for TAC .csvs
 tac_folder <- here("simulated_data", "simulated_cards")
 
-# Read and combine all TAC .csvs into tac_raw
-tac_raw <- list.files(tac_folder, full.names = TRUE, pattern = "\\.csv$") %>%
+# Read and combine all TAC .xlsx output files into tac_raw
+tac_raw <- list.files(tac_folder, full.names = TRUE, pattern = "\\.xlsx$") %>%
   map_dfr(read_csv, .id = "source_file", show_col_types = FALSE)
 ```
 
@@ -35,14 +47,15 @@ tac_raw <- list.files(tac_folder, full.names = TRUE, pattern = "\\.csv$") %>%
 #### Check micro (IDEXX) data format
 ```{r micro.check}
 # Code provided to check structure
-names(microbio_df)
-summary(microbio_df)
-head(microbio_df, n=8)
-unique(microbio_df$sample_id) %>% length()
-table(microbio_df$sample_type)
+names(microbio_df) # variable names
+summary(microbio_df) # summary of data
+head(microbio_df, n=8) # view top 8 rows
+unique(microbio_df$sample_id) %>% length() # number of samples
+table(microbio_df$sample_type) # number of rows in dataset by type
 ```
 
 #### Clean and process microbio dataset
+First we will clean the microbial results data by extracting the household id and sample type from the sample id, and calculating soil moisture content.  
 ```{r clean.micro}
 microbio_clean <- microbio_df %>%
   mutate(
@@ -97,7 +110,7 @@ microbio_clean %>%
 microbio_clean <- microbio_clean %>% 
   mutate(
     across(everything(), ~replace_na(.x, 0)), # replace NAs with 0s across all variables in dataframe
-    tc_detect = if_else(tc_mpn > 0, 1, 0), 
+    tc_detect = if_else(tc_mpn > 0, 1, 0), # set detect = 1 if mpn > 0
     ar_tc_detect = if_else(ar_tc_mpn > 0, 1, 0),
     ec_detect = if_else(ecoli_mpn > 0, 1, 0),
     ar_ec_detect = if_else(ar_ecoli_mpn > 0, 1, 0)
@@ -105,6 +118,7 @@ microbio_clean <- microbio_clean %>%
 ```
 
 #### Transform ESBL CFU results
+Plate count data for ESBL-E. coli should be adjusted for moisture content and sample volume (for effluent and compost samples only), and should be log-transformed to create a normal (bell-curve) distribution for statistical analyses.  
 ```{r plot.cfu}
 hist(microbio_clean$esbl_e_coli_cfu) # check distribution with histogram
 ```
@@ -114,10 +128,10 @@ hist(microbio_clean$esbl_e_coli_cfu) # check distribution with histogram
 microbio_clean2 <- microbio_clean %>%
   mutate(
     moisture_fraction = soil_moisture / 100,
-    esbl_e_coli_cfu_adj = if_else(esbl_e_coli_cfu == 0, 0.5, esbl_e_coli_cfu),
-    adjusted_esbl_cfu = case_when(
+    esbl_e_coli_cfu_adj = if_else(esbl_e_coli_cfu == 0, 0.5, esbl_e_coli_cfu), # set 0s to 1/2 lower limit of detection (1 CFU)
+    adjusted_esbl_cfu = case_when( # for 
       sample_type %in% c("effluent", "compost") ~ esbl_e_coli_cfu_adj / (1 - moisture_fraction) / 2,
-      sample_type == "produce" ~ esbl_e_coli_cfu_adj / 2,
+      sample_type == "produce" ~ esbl_e_coli_cfu_adj,
       TRUE ~ NA_real_),
     
     # Add code to create new log_adjusted_esbl_cfu variable here 
@@ -138,15 +152,16 @@ ggplot(microbio_clean2, aes(x = log_adjusted_esbl_cfu, fill = sample_type)) +
 ```
 
 #### Transform MPN results
+Next we will transform IDEXX MPN results. This process is similar to the above steps taken for ESBL E. coli, but now we will do this across multiple variables (each of the bacterial indicators).   
 ```{r adjust.mpn.task}
 # Workshop task: Create log-transformed MPN variables
 microbio_clean2 <- microbio_clean2 %>%
   mutate(
     # Add adjustments for LOD, moisture, and sample volume for compost and effluent samples
     across(c(tc_mpn, ar_tc_mpn, ecoli_mpn, ar_ecoli_mpn),
-                ~ if_else(. == 0, 0.5, .),
+                ~ if_else(. == 0, 0.5, .), # set 0s to 1/2 lower limit of detection (1 MPN) 
                 .names = "{.col}_adj")) %>%
-  mutate(across(matches("_adj$"),
+  mutate(across(matches("_adj$"), # only for adjusted variables 
                 ~ if_else(sample_type %in% c("compost", "effluent"), . / (1 - moisture_fraction) / 2, . / 2),
                 .names = "adjusted_{.col}")) %>%
   # Add code for log10 transformation to all adjusted MPN variables here
@@ -171,11 +186,13 @@ unique(tac_raw$Sample[grepl("NTC", tac_raw$Sample) & tac_raw$Result == "Positive
 ```
 
 #### Clean TAC data
+Lastly, we will clean the compiled raw TAC files by removing non-template controls (NTC) and creating new variables.  
 ```{r clean.tac.task}
 # Workshop task: Clean TAC data and extract variables
-# Use mutate to extract household_id and sample_type and create detect indicator
 tac_clean <- tac_raw %>%
   filter(!grepl("NTC", Sample, ignore.case = TRUE)) %>% # remove non-template controls
+  
+# Add code to extract household_id and sample_type and create binary detect variable here
   mutate(
     household_id = ,
     sample_type = ,
@@ -186,6 +203,7 @@ View(tac_clean)
 ```
 
 ## Save final datasets
+Select whatever variables you need for the analysis and save the cleaned datasets in a folder (clean_data) within the folder you created for the GitHub repository. Make sure you create the clean_data folder before running the code.  
 ```{r final.save.task}
 # Workshop task: Save clean, compiled TAC dataset using write_csv() and here()
 microbio_clean3 <- microbio_clean2 %>%
@@ -200,3 +218,5 @@ write_csv(microbio_clean3, here("clean_data", "microbial_data_cleaned.csv")) # c
 # Add code to select key variables and save cleaned TAC dataframe here
 
 ```
+
+This is the end of the first training session!
