@@ -210,7 +210,7 @@ Select whatever variables you need for the analysis and save the cleaned dataset
 # Workshop task: Save clean, compiled TAC dataset using write_csv() and here()
 microbio_clean3 <- microbio_clean2 %>%
   select(household_id, sample_type, soil_moisture, esbl_ec_cfu = esbl_e_coli_cfu,
-         log_adj_esbl_ecoli = log_adjusted_esbl_cfu, esbl_ecoli_detect = esbl_e_coli_present,
+         log_adj_esbl_ecoli = log_adjusted_esbl_cfu, esbl_ecoli_detect,
          log_adj_tc_mpn = log_adjusted_tc_mpn_adj, log_adj_ec_mpn = log_adjusted_ecoli_mpn_adj,
          log_adj_ar_tc_mpn = log_adjusted_ar_tc_mpn_adj, log_adj_ar_ec_mpn = log_adjusted_ar_ecoli_mpn_adj,
          tc_detect, ec_detect, ar_tc_detect, ar_ec_detect)

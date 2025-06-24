@@ -1,0 +1,385 @@
+Sample,Target,sample_type,baseline_prob,detect_prob,is_detected,Cq,AMP,Amp Score,Result,Cq Conf,Cq SD,Well
+HH078_compost,Adenovirus 40/41,compost,0.33,0.29700000000000004,FALSE,NA,No Amp,0.65,Negative,0.3,NA,A1
+HH078_compost,Aeromonas,compost,0.31,0.279,FALSE,NA,No Amp,0.66,Negative,0.21,NA,A2
+HH078_compost,Ancylostoma,compost,0.16,0.14400000000000002,FALSE,NA,No Amp,1.06,Negative,0.46,NA,A3
+HH078_compost,Ascaris,compost,0.33,0.29700000000000004,FALSE,NA,No Amp,1.02,Negative,0.06,NA,A4
+HH078_compost,Astrovirus,compost,0.2,0.18000000000000002,FALSE,NA,No Amp,0,Negative,0.24,NA,A5
+HH078_compost,BacHum,compost,0.1,0.09000000000000001,FALSE,NA,No Amp,0.63,Negative,0.11,NA,A6
+HH078_compost,Bacteroides fragilis,compost,0.62,0.558,FALSE,NA,No Amp,0.71,Negative,0.19,NA,B1
+HH078_compost,Blastocystis,compost,0.33,0.29700000000000004,TRUE,21.61,Amp,1.36,Positive,0.82,0.58,B2
+HH078_compost,Campylobacter,compost,0.35,0.315,TRUE,22.53,Amp,1.99,Positive,0.83,0.82,B3
+HH078_compost,Clostridium difficile,compost,0.2,0.18000000000000002,FALSE,NA,No Amp,0.1,Negative,0.33,NA,B4
+HH078_compost,CrAssphage,compost,0.1,0.09000000000000001,FALSE,NA,Inconclusive,0.79,Equivocal,0.25,NA,B5
+HH078_compost,Cryptosporidium,compost,0.36,0.324,FALSE,NA,No Amp,0.89,Negative,0.15,NA,B6
+HH078_compost,Cyclospora,compost,0.15,0.135,FALSE,NA,No Amp,0.55,Negative,0.38,NA,C1
+HH078_compost,Dientamoeba fragilis,compost,0.05,0.045000000000000005,FALSE,NA,No Amp,0.48,Negative,0.26,NA,C2
+HH078_compost,E. coli O157,compost,0.38,0.342,FALSE,NA,No Amp,0.46,Negative,0.11,NA,C3
+HH078_compost,EAEC,compost,0.69,0.621,FALSE,NA,Inconclusive,0.44,Equivocal,0.29,NA,C4
+HH078_compost,EPEC,compost,0.67,0.6030000000000001,TRUE,29.86,Amp,1.82,Positive,0.9,0.39,C5
+HH078_compost,ETEC,compost,0.08,0.07200000000000001,FALSE,NA,Inconclusive,0.99,Equivocal,0.42,NA,C6
+HH078_compost,Entamoeba histolytica,compost,0.08,0.07200000000000001,FALSE,NA,No Amp,0.14,Negative,0.29,NA,D1
+HH078_compost,Enterovirus,compost,0.3,0.27,FALSE,NA,No Amp,0.13,Negative,0.29,NA,D2
+HH078_compost,Giardia,compost,0.35,0.315,TRUE,31.4,Amp,1.82,Positive,0.98,0.97,D3
+HH078_compost,HF183,compost,0.1,0.09000000000000001,TRUE,23.34,Amp,1.37,Positive,0.8,0.9,D4
+HH078_compost,Helicobacter pylori,compost,0.25,0.225,FALSE,NA,No Amp,0.95,Negative,0.33,NA,D5
+HH078_compost,Hepatitis A,compost,0.33,0.29700000000000004,FALSE,NA,No Amp,0.7,Negative,0.25,NA,D6
+HH078_compost,Hepatitis E,compost,0.07,0.06300000000000001,FALSE,NA,No Amp,0.1,Negative,0.11,NA,E1
+HH078_compost,Listeria monocytogenes,compost,0.23,0.20700000000000002,TRUE,28.24,Amp,1.52,Positive,0.88,0.19,E2
+HH078_compost,MS2,compost,0.1,0.09000000000000001,TRUE,27.61,Amp,1.31,Positive,0.84,0.5,E3
+HH078_compost,Necator,compost,0.33,0.29700000000000004,FALSE,NA,No Amp,1.08,Negative,0.34,NA,E4
+HH078_compost,No Template Control,compost,0,0,FALSE,NA,No Amp,0.67,Negative,0.28,NA,E5
+HH078_compost,Norovirus GI,compost,0.62,0.558,TRUE,30.66,Amp,1.43,Positive,0.91,0.93,E6
+HH078_compost,Norovirus GII,compost,0.29,0.261,TRUE,21.65,Amp,1.59,Positive,0.96,0.34,F1
+HH078_compost,Rotavirus A,compost,0.66,0.5940000000000001,TRUE,25.05,Amp,1.21,Positive,0.97,0.38,F2
+HH078_compost,STEC,compost,0.7,0.63,FALSE,NA,No Amp,0.91,Negative,0.17,NA,F3
+HH078_compost,Salmonella,compost,0.67,0.6030000000000001,FALSE,NA,No Amp,1.01,Negative,0.41,NA,F4
+HH078_compost,Sapovirus,compost,0.19,0.171,TRUE,25.87,Amp,1.95,Positive,0.86,0.42,F5
+HH078_compost,Shigella,compost,0.32,0.28800000000000003,TRUE,30.54,Amp,1.47,Positive,0.93,0.71,F6
+HH078_compost,Sketa22,compost,0.05,0.045000000000000005,FALSE,NA,Inconclusive,0.45,Equivocal,0.09,NA,G1
+HH078_compost,Spiked_Extraction_Control,compost,0.1,0.09000000000000001,FALSE,NA,Inconclusive,0.28,Equivocal,0.21,NA,G2
+HH078_compost,Strongyloides,compost,0.66,0.5940000000000001,FALSE,NA,No Amp,0.45,Negative,0.37,NA,G3
+HH078_compost,Trichuris,compost,0.18,0.162,FALSE,NA,No Amp,0.45,Negative,0.14,NA,G4
+HH078_compost,Vibrio cholerae,compost,0.61,0.549,FALSE,NA,No Amp,0.22,Negative,0.33,NA,G5
+HH078_compost,Yersinia enterocolitica,compost,0.34,0.30600000000000005,FALSE,NA,No Amp,1.05,Negative,0.32,NA,G6
+HH078_compost,blaCTX-M,compost,0.3,0.27,TRUE,20.38,Amp,1.35,Positive,0.84,0.81,H1
+HH078_compost,blaNDM,compost,0.4,0.36000000000000004,TRUE,25.2,Amp,1.53,Positive,0.99,0.4,H2
+HH078_compost,mecA,compost,0.06,0.054,FALSE,NA,No Amp,0.52,Negative,0.32,NA,H3
+HH078_compost,qnrS,compost,0.64,0.5760000000000001,TRUE,25.59,Amp,2,Positive,0.87,0.53,H4
+HH078_compost,sul1,compost,0.06,0.054,FALSE,NA,No Amp,0.1,Negative,0.42,NA,H5
+HH078_compost,tetA,compost,0.07,0.06300000000000001,FALSE,NA,No Amp,0.16,Negative,0.35,NA,H6
+HH078_effluent,Adenovirus 40/41,effluent,0.33,0.396,FALSE,NA,Inconclusive,0.97,Equivocal,0.2,NA,A1
+HH078_effluent,Aeromonas,effluent,0.31,0.372,TRUE,27,Amp,1.49,Positive,0.95,0.48,A2
+HH078_effluent,Ancylostoma,effluent,0.16,0.192,FALSE,NA,Inconclusive,0.34,Equivocal,0.02,NA,A3
+HH078_effluent,Ascaris,effluent,0.33,0.396,FALSE,NA,No Amp,0.31,Negative,0.07,NA,A4
+HH078_effluent,Astrovirus,effluent,0.2,0.24,FALSE,NA,No Amp,0.53,Negative,0.42,NA,A5
+HH078_effluent,BacHum,effluent,0.1,0.12,FALSE,NA,No Amp,0.79,Negative,0.05,NA,A6
+HH078_effluent,Bacteroides fragilis,effluent,0.62,0.744,FALSE,NA,No Amp,0.28,Negative,0.13,NA,B1
+HH078_effluent,Blastocystis,effluent,0.33,0.396,FALSE,NA,No Amp,0.46,Negative,0.28,NA,B2
+HH078_effluent,Campylobacter,effluent,0.35,0.42,FALSE,NA,No Amp,0.45,Negative,0.35,NA,B3
+HH078_effluent,Clostridium difficile,effluent,0.2,0.24,TRUE,29.08,Amp,1.76,Positive,0.87,0.63,B4
+HH078_effluent,CrAssphage,effluent,0.1,0.12,FALSE,NA,No Amp,0.69,Negative,0.27,NA,B5
+HH078_effluent,Cryptosporidium,effluent,0.36,0.432,FALSE,NA,No Amp,1.04,Negative,0.48,NA,B6
+HH078_effluent,Cyclospora,effluent,0.15,0.18,TRUE,27.21,Amp,1.83,Positive,0.8,0.32,C1
+HH078_effluent,Dientamoeba fragilis,effluent,0.05,0.06,TRUE,20.76,Amp,1.9,Positive,0.85,0.93,C2
+HH078_effluent,E. coli O157,effluent,0.38,0.45599999999999996,TRUE,24.26,Amp,1.31,Positive,0.85,0.17,C3
+HH078_effluent,EAEC,effluent,0.69,0.828,TRUE,21.59,Amp,1.78,Positive,0.87,0.17,C4
+HH078_effluent,EPEC,effluent,0.67,0.804,FALSE,NA,No Amp,0.9,Negative,0.45,NA,C5
+HH078_effluent,ETEC,effluent,0.08,0.096,FALSE,NA,No Amp,0.71,Negative,0.33,NA,C6
+HH078_effluent,Entamoeba histolytica,effluent,0.08,0.096,FALSE,NA,No Amp,0.56,Negative,0.04,NA,D1
+HH078_effluent,Enterovirus,effluent,0.3,0.36,FALSE,NA,No Amp,0.23,Negative,0.32,NA,D2
+HH078_effluent,Giardia,effluent,0.35,0.42,FALSE,NA,No Amp,0.43,Negative,0.08,NA,D3
+HH078_effluent,HF183,effluent,0.1,0.12,FALSE,NA,No Amp,1.01,Negative,0.25,NA,D4
+HH078_effluent,Helicobacter pylori,effluent,0.25,0.3,FALSE,NA,No Amp,0.15,Negative,0.24,NA,D5
+HH078_effluent,Hepatitis A,effluent,0.33,0.396,TRUE,32.31,Amp,1.64,Positive,0.98,0.27,D6
+HH078_effluent,Hepatitis E,effluent,0.07,0.084,FALSE,NA,No Amp,0.68,Negative,0.35,NA,E1
+HH078_effluent,Listeria monocytogenes,effluent,0.23,0.276,FALSE,NA,No Amp,0.53,Negative,0.16,NA,E2
+HH078_effluent,MS2,effluent,0.1,0.12,FALSE,NA,No Amp,0.8,Negative,0.12,NA,E3
+HH078_effluent,Necator,effluent,0.33,0.396,FALSE,NA,Inconclusive,0.62,Equivocal,0.18,NA,E4
+HH078_effluent,No Template Control,effluent,0,0,FALSE,NA,No Amp,0.44,Negative,0.26,NA,E5
+HH078_effluent,Norovirus GI,effluent,0.62,0.744,TRUE,21.97,Amp,1.29,Positive,0.8,0.28,E6
+HH078_effluent,Norovirus GII,effluent,0.29,0.348,FALSE,NA,No Amp,0.7,Negative,0.34,NA,F1
+HH078_effluent,Rotavirus A,effluent,0.66,0.792,TRUE,20.29,Amp,1.26,Positive,0.95,0.42,F2
+HH078_effluent,STEC,effluent,0.7,0.84,TRUE,22.96,Amp,1.62,Positive,0.93,0.55,F3
+HH078_effluent,Salmonella,effluent,0.67,0.804,TRUE,28.06,Amp,1.9,Positive,0.94,0.17,F4
+HH078_effluent,Sapovirus,effluent,0.19,0.22799999999999998,FALSE,NA,No Amp,1.09,Negative,0.27,NA,F5
+HH078_effluent,Shigella,effluent,0.32,0.384,FALSE,NA,No Amp,1.04,Negative,0.34,NA,F6
+HH078_effluent,Sketa22,effluent,0.05,0.06,FALSE,NA,No Amp,0.63,Negative,0.27,NA,G1
+HH078_effluent,Spiked_Extraction_Control,effluent,0.1,0.12,FALSE,NA,Inconclusive,0.07,Equivocal,0.46,NA,G2
+HH078_effluent,Strongyloides,effluent,0.66,0.792,TRUE,23.57,Amp,1.94,Positive,0.91,0.88,G3
+HH078_effluent,Trichuris,effluent,0.18,0.216,FALSE,NA,No Amp,0.51,Negative,0.23,NA,G4
+HH078_effluent,Vibrio cholerae,effluent,0.61,0.732,FALSE,NA,Inconclusive,0.92,Equivocal,0.46,NA,G5
+HH078_effluent,Yersinia enterocolitica,effluent,0.34,0.40800000000000003,TRUE,27.03,Amp,1.56,Positive,0.83,0.71,G6
+HH078_effluent,blaCTX-M,effluent,0.3,0.36,FALSE,NA,No Amp,0.88,Negative,0.28,NA,H1
+HH078_effluent,blaNDM,effluent,0.4,0.48,TRUE,26.85,Amp,1.78,Positive,0.9,0.11,H2
+HH078_effluent,mecA,effluent,0.06,0.072,TRUE,28.84,Amp,1.69,Positive,0.93,0.82,H3
+HH078_effluent,qnrS,effluent,0.64,0.768,FALSE,NA,No Amp,0.09,Negative,0.4,NA,H4
+HH078_effluent,sul1,effluent,0.06,0.072,FALSE,NA,No Amp,0.93,Negative,0.18,NA,H5
+HH078_effluent,tetA,effluent,0.07,0.084,FALSE,NA,Inconclusive,0.74,Equivocal,0.14,NA,H6
+HH078_produce,Adenovirus 40/41,produce,0.33,0.198,FALSE,NA,Inconclusive,0.79,Equivocal,0.48,NA,A1
+HH078_produce,Aeromonas,produce,0.31,0.186,FALSE,NA,Inconclusive,0.65,Equivocal,0.07,NA,A2
+HH078_produce,Ancylostoma,produce,0.16,0.096,FALSE,NA,No Amp,0.71,Negative,0.34,NA,A3
+HH078_produce,Ascaris,produce,0.33,0.198,FALSE,NA,No Amp,0.69,Negative,0.1,NA,A4
+HH078_produce,Astrovirus,produce,0.2,0.12,FALSE,NA,No Amp,0.18,Negative,0.05,NA,A5
+HH078_produce,BacHum,produce,0.1,0.06,FALSE,NA,No Amp,0.44,Negative,0.02,NA,A6
+HH078_produce,Bacteroides fragilis,produce,0.62,0.372,FALSE,NA,No Amp,0.85,Negative,0.32,NA,B1
+HH078_produce,Blastocystis,produce,0.33,0.198,FALSE,NA,No Amp,0.71,Negative,0.12,NA,B2
+HH078_produce,Campylobacter,produce,0.35,0.21,FALSE,NA,No Amp,0.28,Negative,0.16,NA,B3
+HH078_produce,Clostridium difficile,produce,0.2,0.12,FALSE,NA,No Amp,0,Negative,0.06,NA,B4
+HH078_produce,CrAssphage,produce,0.1,0.06,FALSE,NA,No Amp,0,Negative,0.27,NA,B5
+HH078_produce,Cryptosporidium,produce,0.36,0.216,TRUE,28.01,Amp,1.45,Positive,0.97,0.39,B6
+HH078_produce,Cyclospora,produce,0.15,0.09,FALSE,NA,No Amp,0.1,Negative,0.3,NA,C1
+HH078_produce,Dientamoeba fragilis,produce,0.05,0.03,FALSE,NA,No Amp,0.37,Negative,0.29,NA,C2
+HH078_produce,E. coli O157,produce,0.38,0.22799999999999998,FALSE,NA,No Amp,0.17,Negative,0.14,NA,C3
+HH078_produce,EAEC,produce,0.69,0.414,TRUE,33.81,Amp,1.6,Positive,0.81,0.57,C4
+HH078_produce,EPEC,produce,0.67,0.402,FALSE,NA,Inconclusive,0.05,Equivocal,0.22,NA,C5
+HH078_produce,ETEC,produce,0.08,0.048,FALSE,NA,No Amp,1.04,Negative,0.14,NA,C6
+HH078_produce,Entamoeba histolytica,produce,0.08,0.048,FALSE,NA,No Amp,0.67,Negative,0.07,NA,D1
+HH078_produce,Enterovirus,produce,0.3,0.18,FALSE,NA,No Amp,0.49,Negative,0.14,NA,D2
+HH078_produce,Giardia,produce,0.35,0.21,FALSE,NA,No Amp,0.33,Negative,0.1,NA,D3
+HH078_produce,HF183,produce,0.1,0.06,FALSE,NA,No Amp,0.2,Negative,0.06,NA,D4
+HH078_produce,Helicobacter pylori,produce,0.25,0.15,FALSE,NA,No Amp,0.37,Negative,0.3,NA,D5
+HH078_produce,Hepatitis A,produce,0.33,0.198,FALSE,NA,No Amp,0.69,Negative,0.21,NA,D6
+HH078_produce,Hepatitis E,produce,0.07,0.042,FALSE,NA,No Amp,0.82,Negative,0.5,NA,E1
+HH078_produce,Listeria monocytogenes,produce,0.23,0.138,FALSE,NA,No Amp,0.18,Negative,0.32,NA,E2
+HH078_produce,MS2,produce,0.1,0.06,FALSE,NA,No Amp,0,Negative,0.37,NA,E3
+HH078_produce,Necator,produce,0.33,0.198,FALSE,NA,No Amp,0.62,Negative,0.08,NA,E4
+HH078_produce,No Template Control,produce,0,0,FALSE,NA,No Amp,0.65,Negative,0.41,NA,E5
+HH078_produce,Norovirus GI,produce,0.62,0.372,FALSE,NA,No Amp,1.07,Negative,0.43,NA,E6
+HH078_produce,Norovirus GII,produce,0.29,0.174,FALSE,NA,No Amp,0.24,Negative,0.26,NA,F1
+HH078_produce,Rotavirus A,produce,0.66,0.396,TRUE,34.34,Amp,1.39,Positive,0.86,0.59,F2
+HH078_produce,STEC,produce,0.7,0.42,TRUE,27.07,Amp,1.25,Positive,0.95,0.42,F3
+HH078_produce,Salmonella,produce,0.67,0.402,FALSE,NA,No Amp,0.44,Negative,0.36,NA,F4
+HH078_produce,Sapovirus,produce,0.19,0.11399999999999999,FALSE,NA,No Amp,1.06,Negative,0.32,NA,F5
+HH078_produce,Shigella,produce,0.32,0.192,FALSE,NA,No Amp,0.86,Negative,0.22,NA,F6
+HH078_produce,Sketa22,produce,0.05,0.03,FALSE,NA,No Amp,1.05,Negative,0.31,NA,G1
+HH078_produce,Spiked_Extraction_Control,produce,0.1,0.06,FALSE,NA,Inconclusive,0.18,Equivocal,0.42,NA,G2
+HH078_produce,Strongyloides,produce,0.66,0.396,FALSE,NA,No Amp,0.1,Negative,0.04,NA,G3
+HH078_produce,Trichuris,produce,0.18,0.108,FALSE,NA,No Amp,0.74,Negative,0.39,NA,G4
+HH078_produce,Vibrio cholerae,produce,0.61,0.366,FALSE,NA,Inconclusive,0.13,Equivocal,0.27,NA,G5
+HH078_produce,Yersinia enterocolitica,produce,0.34,0.20400000000000001,TRUE,26.75,Amp,1.86,Positive,0.81,0.14,G6
+HH078_produce,blaCTX-M,produce,0.3,0.18,FALSE,NA,No Amp,0.91,Negative,0.18,NA,H1
+HH078_produce,blaNDM,produce,0.4,0.24,FALSE,NA,No Amp,0.76,Negative,0.28,NA,H2
+HH078_produce,mecA,produce,0.06,0.036,FALSE,NA,No Amp,0.74,Negative,0.43,NA,H3
+HH078_produce,qnrS,produce,0.64,0.384,TRUE,27.48,Amp,1.96,Positive,0.94,0.64,H4
+HH078_produce,sul1,produce,0.06,0.036,FALSE,NA,No Amp,0.11,Negative,0.3,NA,H5
+HH078_produce,tetA,produce,0.07,0.042,FALSE,NA,No Amp,0.12,Negative,0.41,NA,H6
+HH079_compost,Adenovirus 40/41,compost,0.33,0.29700000000000004,TRUE,33.38,Amp,1.97,Positive,0.97,0.85,A1
+HH079_compost,Aeromonas,compost,0.31,0.279,TRUE,27.48,Amp,1.34,Positive,0.99,0.78,A2
+HH079_compost,Ancylostoma,compost,0.16,0.14400000000000002,FALSE,NA,No Amp,0.5,Negative,0.25,NA,A3
+HH079_compost,Ascaris,compost,0.33,0.29700000000000004,FALSE,NA,No Amp,0.53,Negative,0.42,NA,A4
+HH079_compost,Astrovirus,compost,0.2,0.18000000000000002,FALSE,NA,No Amp,0.8,Negative,0.42,NA,A5
+HH079_compost,BacHum,compost,0.1,0.09000000000000001,FALSE,NA,No Amp,0.33,Negative,0.44,NA,A6
+HH079_compost,Bacteroides fragilis,compost,0.62,0.558,TRUE,25.23,Amp,1.69,Positive,0.84,0.33,B1
+HH079_compost,Blastocystis,compost,0.33,0.29700000000000004,TRUE,29.11,Amp,1.28,Positive,0.85,0.35,B2
+HH079_compost,Campylobacter,compost,0.35,0.315,FALSE,NA,No Amp,1.08,Negative,0.43,NA,B3
+HH079_compost,Clostridium difficile,compost,0.2,0.18000000000000002,FALSE,NA,No Amp,0.6,Negative,0.31,NA,B4
+HH079_compost,CrAssphage,compost,0.1,0.09000000000000001,FALSE,NA,No Amp,0,Negative,0.25,NA,B5
+HH079_compost,Cryptosporidium,compost,0.36,0.324,FALSE,NA,No Amp,0.72,Negative,0.32,NA,B6
+HH079_compost,Cyclospora,compost,0.15,0.135,FALSE,NA,No Amp,0.16,Negative,0.41,NA,C1
+HH079_compost,Dientamoeba fragilis,compost,0.05,0.045000000000000005,FALSE,NA,No Amp,0.88,Negative,0.46,NA,C2
+HH079_compost,E. coli O157,compost,0.38,0.342,TRUE,27.38,Amp,1.55,Positive,0.9,0.81,C3
+HH079_compost,EAEC,compost,0.69,0.621,FALSE,NA,No Amp,1.03,Negative,0.19,NA,C4
+HH079_compost,EPEC,compost,0.67,0.6030000000000001,FALSE,NA,No Amp,1.01,Negative,0.18,NA,C5
+HH079_compost,ETEC,compost,0.08,0.07200000000000001,FALSE,NA,No Amp,0.69,Negative,0.25,NA,C6
+HH079_compost,Entamoeba histolytica,compost,0.08,0.07200000000000001,FALSE,NA,No Amp,0.11,Negative,0.44,NA,D1
+HH079_compost,Enterovirus,compost,0.3,0.27,TRUE,31.39,Amp,1.85,Positive,0.97,0.44,D2
+HH079_compost,Giardia,compost,0.35,0.315,FALSE,NA,No Amp,0.06,Negative,0.29,NA,D3
+HH079_compost,HF183,compost,0.1,0.09000000000000001,FALSE,NA,No Amp,0.63,Negative,0.46,NA,D4
+HH079_compost,Helicobacter pylori,compost,0.25,0.225,FALSE,NA,Inconclusive,0.61,Equivocal,0.45,NA,D5
+HH079_compost,Hepatitis A,compost,0.33,0.29700000000000004,FALSE,NA,No Amp,0.77,Negative,0.12,NA,D6
+HH079_compost,Hepatitis E,compost,0.07,0.06300000000000001,FALSE,NA,No Amp,1.02,Negative,0.09,NA,E1
+HH079_compost,Listeria monocytogenes,compost,0.23,0.20700000000000002,FALSE,NA,No Amp,0.82,Negative,0.05,NA,E2
+HH079_compost,MS2,compost,0.1,0.09000000000000001,FALSE,NA,No Amp,0.78,Negative,0.37,NA,E3
+HH079_compost,Necator,compost,0.33,0.29700000000000004,FALSE,NA,No Amp,0.29,Negative,0.17,NA,E4
+HH079_compost,No Template Control,compost,0,0,FALSE,NA,Inconclusive,0.75,Equivocal,0.4,NA,E5
+HH079_compost,Norovirus GI,compost,0.62,0.558,FALSE,NA,No Amp,0.71,Negative,0.38,NA,E6
+HH079_compost,Norovirus GII,compost,0.29,0.261,FALSE,NA,No Amp,0.32,Negative,0.25,NA,F1
+HH079_compost,Rotavirus A,compost,0.66,0.5940000000000001,TRUE,25.56,Amp,1.75,Positive,0.81,0.1,F2
+HH079_compost,STEC,compost,0.7,0.63,TRUE,24.65,Amp,1.71,Positive,0.94,0.76,F3
+HH079_compost,Salmonella,compost,0.67,0.6030000000000001,TRUE,26.75,Amp,1.82,Positive,0.94,0.37,F4
+HH079_compost,Sapovirus,compost,0.19,0.171,TRUE,22.03,Amp,1.59,Positive,0.98,0.23,F5
+HH079_compost,Shigella,compost,0.32,0.28800000000000003,FALSE,NA,No Amp,1.04,Negative,0.12,NA,F6
+HH079_compost,Sketa22,compost,0.05,0.045000000000000005,TRUE,34.7,Amp,1.96,Positive,0.82,0.37,G1
+HH079_compost,Spiked_Extraction_Control,compost,0.1,0.09000000000000001,FALSE,NA,No Amp,0.78,Negative,0.46,NA,G2
+HH079_compost,Strongyloides,compost,0.66,0.5940000000000001,FALSE,NA,No Amp,0.98,Negative,0.14,NA,G3
+HH079_compost,Trichuris,compost,0.18,0.162,TRUE,21.25,Amp,1.63,Positive,0.92,0.26,G4
+HH079_compost,Vibrio cholerae,compost,0.61,0.549,FALSE,NA,Inconclusive,0.83,Equivocal,0.16,NA,G5
+HH079_compost,Yersinia enterocolitica,compost,0.34,0.30600000000000005,FALSE,NA,No Amp,0.72,Negative,0.24,NA,G6
+HH079_compost,blaCTX-M,compost,0.3,0.27,FALSE,NA,No Amp,1.07,Negative,0.15,NA,H1
+HH079_compost,blaNDM,compost,0.4,0.36000000000000004,FALSE,NA,No Amp,0.55,Negative,0.07,NA,H2
+HH079_compost,mecA,compost,0.06,0.054,FALSE,NA,No Amp,0.05,Negative,0.04,NA,H3
+HH079_compost,qnrS,compost,0.64,0.5760000000000001,TRUE,23.61,Amp,1.27,Positive,0.86,0.32,H4
+HH079_compost,sul1,compost,0.06,0.054,FALSE,NA,No Amp,1.04,Negative,0.48,NA,H5
+HH079_compost,tetA,compost,0.07,0.06300000000000001,FALSE,NA,No Amp,0.48,Negative,0.29,NA,H6
+HH079_effluent,Adenovirus 40/41,effluent,0.33,0.396,TRUE,23.04,Amp,1.5,Positive,0.81,0.24,A1
+HH079_effluent,Aeromonas,effluent,0.31,0.372,FALSE,NA,No Amp,0.93,Negative,0.33,NA,A2
+HH079_effluent,Ancylostoma,effluent,0.16,0.192,TRUE,25.53,Amp,1.33,Positive,0.87,0.34,A3
+HH079_effluent,Ascaris,effluent,0.33,0.396,FALSE,NA,No Amp,0.63,Negative,0.08,NA,A4
+HH079_effluent,Astrovirus,effluent,0.2,0.24,FALSE,NA,No Amp,0.07,Negative,0.15,NA,A5
+HH079_effluent,BacHum,effluent,0.1,0.12,FALSE,NA,Inconclusive,0.21,Equivocal,0.33,NA,A6
+HH079_effluent,Bacteroides fragilis,effluent,0.62,0.744,TRUE,22.35,Amp,1.6,Positive,0.83,0.87,B1
+HH079_effluent,Blastocystis,effluent,0.33,0.396,FALSE,NA,No Amp,1.02,Negative,0.22,NA,B2
+HH079_effluent,Campylobacter,effluent,0.35,0.42,FALSE,NA,No Amp,0.18,Negative,0.13,NA,B3
+HH079_effluent,Clostridium difficile,effluent,0.2,0.24,FALSE,NA,No Amp,0.08,Negative,0.36,NA,B4
+HH079_effluent,CrAssphage,effluent,0.1,0.12,TRUE,20.11,Amp,1.52,Positive,0.95,0.81,B5
+HH079_effluent,Cryptosporidium,effluent,0.36,0.432,FALSE,NA,No Amp,0.18,Negative,0.44,NA,B6
+HH079_effluent,Cyclospora,effluent,0.15,0.18,FALSE,NA,No Amp,0.41,Negative,0.04,NA,C1
+HH079_effluent,Dientamoeba fragilis,effluent,0.05,0.06,FALSE,NA,Inconclusive,0.8,Equivocal,0.37,NA,C2
+HH079_effluent,E. coli O157,effluent,0.38,0.45599999999999996,FALSE,NA,No Amp,0.96,Negative,0.36,NA,C3
+HH079_effluent,EAEC,effluent,0.69,0.828,TRUE,24.87,Amp,1.81,Positive,0.82,0.34,C4
+HH079_effluent,EPEC,effluent,0.67,0.804,FALSE,NA,No Amp,0.51,Negative,0.46,NA,C5
+HH079_effluent,ETEC,effluent,0.08,0.096,FALSE,NA,No Amp,0.69,Negative,0.13,NA,C6
+HH079_effluent,Entamoeba histolytica,effluent,0.08,0.096,FALSE,NA,Inconclusive,1.04,Equivocal,0.44,NA,D1
+HH079_effluent,Enterovirus,effluent,0.3,0.36,TRUE,29.5,Amp,1.51,Positive,0.96,0.5,D2
+HH079_effluent,Giardia,effluent,0.35,0.42,TRUE,20.48,Amp,1.41,Positive,0.99,0.43,D3
+HH079_effluent,HF183,effluent,0.1,0.12,FALSE,NA,Inconclusive,0.37,Equivocal,0.05,NA,D4
+HH079_effluent,Helicobacter pylori,effluent,0.25,0.3,FALSE,NA,No Amp,0.59,Negative,0.22,NA,D5
+HH079_effluent,Hepatitis A,effluent,0.33,0.396,FALSE,NA,No Amp,0.6,Negative,0.28,NA,D6
+HH079_effluent,Hepatitis E,effluent,0.07,0.084,FALSE,NA,No Amp,0.87,Negative,0.1,NA,E1
+HH079_effluent,Listeria monocytogenes,effluent,0.23,0.276,FALSE,NA,No Amp,0.41,Negative,0.06,NA,E2
+HH079_effluent,MS2,effluent,0.1,0.12,FALSE,NA,No Amp,0.38,Negative,0.33,NA,E3
+HH079_effluent,Necator,effluent,0.33,0.396,FALSE,NA,No Amp,0.4,Negative,0.09,NA,E4
+HH079_effluent,No Template Control,effluent,0,0,FALSE,NA,No Amp,0.27,Negative,0.18,NA,E5
+HH079_effluent,Norovirus GI,effluent,0.62,0.744,TRUE,27.38,Amp,1.64,Positive,0.95,0.23,E6
+HH079_effluent,Norovirus GII,effluent,0.29,0.348,TRUE,25.68,Amp,1.92,Positive,0.81,0.96,F1
+HH079_effluent,Rotavirus A,effluent,0.66,0.792,FALSE,NA,No Amp,0.18,Negative,0.49,NA,F2
+HH079_effluent,STEC,effluent,0.7,0.84,TRUE,33.94,Amp,1.49,Positive,0.8,0.66,F3
+HH079_effluent,Salmonella,effluent,0.67,0.804,FALSE,NA,Inconclusive,0.45,Equivocal,0.18,NA,F4
+HH079_effluent,Sapovirus,effluent,0.19,0.22799999999999998,FALSE,NA,No Amp,0.56,Negative,0.34,NA,F5
+HH079_effluent,Shigella,effluent,0.32,0.384,FALSE,NA,No Amp,0.07,Negative,0.17,NA,F6
+HH079_effluent,Sketa22,effluent,0.05,0.06,FALSE,NA,No Amp,0.58,Negative,0.08,NA,G1
+HH079_effluent,Spiked_Extraction_Control,effluent,0.1,0.12,FALSE,NA,No Amp,0.64,Negative,0.11,NA,G2
+HH079_effluent,Strongyloides,effluent,0.66,0.792,TRUE,34.5,Amp,1.72,Positive,0.98,0.78,G3
+HH079_effluent,Trichuris,effluent,0.18,0.216,FALSE,NA,No Amp,0.3,Negative,0.04,NA,G4
+HH079_effluent,Vibrio cholerae,effluent,0.61,0.732,FALSE,NA,No Amp,0.17,Negative,0.16,NA,G5
+HH079_effluent,Yersinia enterocolitica,effluent,0.34,0.40800000000000003,FALSE,NA,No Amp,1.06,Negative,0.33,NA,G6
+HH079_effluent,blaCTX-M,effluent,0.3,0.36,TRUE,24.33,Amp,1.43,Positive,0.92,0.74,H1
+HH079_effluent,blaNDM,effluent,0.4,0.48,FALSE,NA,Inconclusive,0.04,Equivocal,0.32,NA,H2
+HH079_effluent,mecA,effluent,0.06,0.072,FALSE,NA,No Amp,0.15,Negative,0.48,NA,H3
+HH079_effluent,qnrS,effluent,0.64,0.768,FALSE,NA,No Amp,0.02,Negative,0.04,NA,H4
+HH079_effluent,sul1,effluent,0.06,0.072,FALSE,NA,No Amp,0.38,Negative,0.37,NA,H5
+HH079_effluent,tetA,effluent,0.07,0.084,FALSE,NA,No Amp,0.95,Negative,0.1,NA,H6
+HH079_produce,Adenovirus 40/41,produce,0.33,0.198,FALSE,NA,No Amp,0.79,Negative,0.34,NA,A1
+HH079_produce,Aeromonas,produce,0.31,0.186,FALSE,NA,No Amp,0.72,Negative,0.38,NA,A2
+HH079_produce,Ancylostoma,produce,0.16,0.096,TRUE,34.48,Amp,1.63,Positive,0.88,0.6,A3
+HH079_produce,Ascaris,produce,0.33,0.198,FALSE,NA,No Amp,0.76,Negative,0.22,NA,A4
+HH079_produce,Astrovirus,produce,0.2,0.12,FALSE,NA,No Amp,0.52,Negative,0.13,NA,A5
+HH079_produce,BacHum,produce,0.1,0.06,FALSE,NA,No Amp,0.81,Negative,0.4,NA,A6
+HH079_produce,Bacteroides fragilis,produce,0.62,0.372,FALSE,NA,No Amp,0.57,Negative,0.42,NA,B1
+HH079_produce,Blastocystis,produce,0.33,0.198,FALSE,NA,No Amp,0.7,Negative,0.14,NA,B2
+HH079_produce,Campylobacter,produce,0.35,0.21,FALSE,NA,No Amp,0.8,Negative,0.26,NA,B3
+HH079_produce,Clostridium difficile,produce,0.2,0.12,FALSE,NA,No Amp,0.54,Negative,0.47,NA,B4
+HH079_produce,CrAssphage,produce,0.1,0.06,FALSE,NA,No Amp,0.71,Negative,0.17,NA,B5
+HH079_produce,Cryptosporidium,produce,0.36,0.216,FALSE,NA,No Amp,0.28,Negative,0.29,NA,B6
+HH079_produce,Cyclospora,produce,0.15,0.09,FALSE,NA,No Amp,1.09,Negative,0.1,NA,C1
+HH079_produce,Dientamoeba fragilis,produce,0.05,0.03,FALSE,NA,No Amp,0.38,Negative,0.3,NA,C2
+HH079_produce,E. coli O157,produce,0.38,0.22799999999999998,TRUE,32.57,Amp,1.58,Positive,0.8,0.92,C3
+HH079_produce,EAEC,produce,0.69,0.414,TRUE,31.57,Amp,1.8,Positive,0.84,0.68,C4
+HH079_produce,EPEC,produce,0.67,0.402,FALSE,NA,Inconclusive,0.45,Equivocal,0.45,NA,C5
+HH079_produce,ETEC,produce,0.08,0.048,FALSE,NA,No Amp,0.94,Negative,0.21,NA,C6
+HH079_produce,Entamoeba histolytica,produce,0.08,0.048,FALSE,NA,No Amp,0.1,Negative,0.41,NA,D1
+HH079_produce,Enterovirus,produce,0.3,0.18,FALSE,NA,No Amp,0.15,Negative,0.49,NA,D2
+HH079_produce,Giardia,produce,0.35,0.21,FALSE,NA,No Amp,0.27,Negative,0.28,NA,D3
+HH079_produce,HF183,produce,0.1,0.06,FALSE,NA,No Amp,0.62,Negative,0.11,NA,D4
+HH079_produce,Helicobacter pylori,produce,0.25,0.15,FALSE,NA,No Amp,0.21,Negative,0.34,NA,D5
+HH079_produce,Hepatitis A,produce,0.33,0.198,FALSE,NA,No Amp,0.26,Negative,0.48,NA,D6
+HH079_produce,Hepatitis E,produce,0.07,0.042,FALSE,NA,No Amp,0.98,Negative,0.37,NA,E1
+HH079_produce,Listeria monocytogenes,produce,0.23,0.138,FALSE,NA,No Amp,0.18,Negative,0.31,NA,E2
+HH079_produce,MS2,produce,0.1,0.06,FALSE,NA,No Amp,0.49,Negative,0.13,NA,E3
+HH079_produce,Necator,produce,0.33,0.198,FALSE,NA,No Amp,0.58,Negative,0.31,NA,E4
+HH079_produce,No Template Control,produce,0,0,FALSE,NA,No Amp,0.34,Negative,0.44,NA,E5
+HH079_produce,Norovirus GI,produce,0.62,0.372,FALSE,NA,No Amp,0.79,Negative,0.34,NA,E6
+HH079_produce,Norovirus GII,produce,0.29,0.174,FALSE,NA,No Amp,1.01,Negative,0.34,NA,F1
+HH079_produce,Rotavirus A,produce,0.66,0.396,FALSE,NA,No Amp,0.83,Negative,0.39,NA,F2
+HH079_produce,STEC,produce,0.7,0.42,TRUE,28.82,Amp,1.72,Positive,0.87,0.43,F3
+HH079_produce,Salmonella,produce,0.67,0.402,TRUE,32.1,Amp,1.67,Positive,0.92,0.24,F4
+HH079_produce,Sapovirus,produce,0.19,0.11399999999999999,FALSE,NA,No Amp,0.65,Negative,0.45,NA,F5
+HH079_produce,Shigella,produce,0.32,0.192,FALSE,NA,No Amp,0.68,Negative,0.04,NA,F6
+HH079_produce,Sketa22,produce,0.05,0.03,FALSE,NA,No Amp,0.78,Negative,0.36,NA,G1
+HH079_produce,Spiked_Extraction_Control,produce,0.1,0.06,FALSE,NA,No Amp,0.61,Negative,0.17,NA,G2
+HH079_produce,Strongyloides,produce,0.66,0.396,TRUE,27.43,Amp,1.6,Positive,0.94,0.69,G3
+HH079_produce,Trichuris,produce,0.18,0.108,FALSE,NA,No Amp,0.63,Negative,0.34,NA,G4
+HH079_produce,Vibrio cholerae,produce,0.61,0.366,FALSE,NA,No Amp,0.01,Negative,0.26,NA,G5
+HH079_produce,Yersinia enterocolitica,produce,0.34,0.20400000000000001,FALSE,NA,No Amp,0.65,Negative,0.47,NA,G6
+HH079_produce,blaCTX-M,produce,0.3,0.18,FALSE,NA,No Amp,0.58,Negative,0.01,NA,H1
+HH079_produce,blaNDM,produce,0.4,0.24,FALSE,NA,No Amp,0.61,Negative,0.3,NA,H2
+HH079_produce,mecA,produce,0.06,0.036,FALSE,NA,No Amp,0.43,Negative,0.37,NA,H3
+HH079_produce,qnrS,produce,0.64,0.384,TRUE,29.56,Amp,1.44,Positive,0.87,0.71,H4
+HH079_produce,sul1,produce,0.06,0.036,FALSE,NA,No Amp,0.63,Negative,0.08,NA,H5
+HH079_produce,tetA,produce,0.07,0.042,FALSE,NA,No Amp,0.54,Negative,0.44,NA,H6
+HH080_compost,Adenovirus 40/41,compost,0.33,0.29700000000000004,FALSE,NA,No Amp,0.53,Negative,0.02,NA,A1
+HH080_compost,Aeromonas,compost,0.31,0.279,FALSE,NA,No Amp,0.66,Negative,0.18,NA,A2
+HH080_compost,Ancylostoma,compost,0.16,0.14400000000000002,FALSE,NA,No Amp,0.19,Negative,0.47,NA,A3
+HH080_compost,Ascaris,compost,0.33,0.29700000000000004,FALSE,NA,No Amp,1.04,Negative,0.41,NA,A4
+HH080_compost,Astrovirus,compost,0.2,0.18000000000000002,FALSE,NA,No Amp,0.74,Negative,0.32,NA,A5
+HH080_compost,BacHum,compost,0.1,0.09000000000000001,FALSE,NA,No Amp,0.64,Negative,0.28,NA,A6
+HH080_compost,Bacteroides fragilis,compost,0.62,0.558,TRUE,31.58,Amp,1.36,Positive,0.87,0.46,B1
+HH080_compost,Blastocystis,compost,0.33,0.29700000000000004,FALSE,NA,No Amp,0.27,Negative,0.34,NA,B2
+HH080_compost,Campylobacter,compost,0.35,0.315,FALSE,NA,No Amp,0.19,Negative,0.19,NA,B3
+HH080_compost,Clostridium difficile,compost,0.2,0.18000000000000002,FALSE,NA,No Amp,0.87,Negative,0.14,NA,B4
+HH080_compost,CrAssphage,compost,0.1,0.09000000000000001,FALSE,NA,No Amp,0.98,Negative,0.19,NA,B5
+HH080_compost,Cryptosporidium,compost,0.36,0.324,FALSE,NA,No Amp,0.18,Negative,0.27,NA,B6
+HH080_compost,Cyclospora,compost,0.15,0.135,FALSE,NA,No Amp,0.93,Negative,0.31,NA,C1
+HH080_compost,Dientamoeba fragilis,compost,0.05,0.045000000000000005,FALSE,NA,Inconclusive,0.53,Equivocal,0.31,NA,C2
+HH080_compost,E. coli O157,compost,0.38,0.342,FALSE,NA,No Amp,0.34,Negative,0.11,NA,C3
+HH080_compost,EAEC,compost,0.69,0.621,TRUE,28.98,Amp,1.59,Positive,0.99,0.86,C4
+HH080_compost,EPEC,compost,0.67,0.6030000000000001,FALSE,NA,No Amp,1,Negative,0.5,NA,C5
+HH080_compost,ETEC,compost,0.08,0.07200000000000001,FALSE,NA,No Amp,0.2,Negative,0.19,NA,C6
+HH080_compost,Entamoeba histolytica,compost,0.08,0.07200000000000001,FALSE,NA,No Amp,0.43,Negative,0.29,NA,D1
+HH080_compost,Enterovirus,compost,0.3,0.27,FALSE,NA,No Amp,0.46,Negative,0.23,NA,D2
+HH080_compost,Giardia,compost,0.35,0.315,TRUE,33.63,Amp,1.84,Positive,0.84,0.39,D3
+HH080_compost,HF183,compost,0.1,0.09000000000000001,FALSE,NA,No Amp,0.96,Negative,0.36,NA,D4
+HH080_compost,Helicobacter pylori,compost,0.25,0.225,FALSE,NA,No Amp,0.73,Negative,0.15,NA,D5
+HH080_compost,Hepatitis A,compost,0.33,0.29700000000000004,FALSE,NA,No Amp,0.93,Negative,0.26,NA,D6
+HH080_compost,Hepatitis E,compost,0.07,0.06300000000000001,FALSE,NA,No Amp,0.66,Negative,0.19,NA,E1
+HH080_compost,Listeria monocytogenes,compost,0.23,0.20700000000000002,FALSE,NA,No Amp,0.86,Negative,0.24,NA,E2
+HH080_compost,MS2,compost,0.1,0.09000000000000001,TRUE,30.58,Amp,1.55,Positive,0.94,0.45,E3
+HH080_compost,Necator,compost,0.33,0.29700000000000004,TRUE,33.67,Amp,1.84,Positive,0.97,0.48,E4
+HH080_compost,No Template Control,compost,0,0,FALSE,NA,No Amp,0.78,Negative,0.43,NA,E5
+HH080_compost,Norovirus GI,compost,0.62,0.558,TRUE,33.42,Amp,1.4,Positive,0.81,0.74,E6
+HH080_compost,Norovirus GII,compost,0.29,0.261,FALSE,NA,Inconclusive,0.18,Equivocal,0.49,NA,F1
+HH080_compost,Rotavirus A,compost,0.66,0.5940000000000001,TRUE,34.67,Amp,1.32,Positive,0.86,0.81,F2
+HH080_compost,STEC,compost,0.7,0.63,TRUE,24.98,Amp,1.23,Positive,1,0.6,F3
+HH080_compost,Salmonella,compost,0.67,0.6030000000000001,FALSE,NA,Inconclusive,0.16,Equivocal,0.31,NA,F4
+HH080_compost,Sapovirus,compost,0.19,0.171,FALSE,NA,No Amp,0.78,Negative,0.19,NA,F5
+HH080_compost,Shigella,compost,0.32,0.28800000000000003,TRUE,20.91,Amp,1.6,Positive,0.94,0.82,F6
+HH080_compost,Sketa22,compost,0.05,0.045000000000000005,FALSE,NA,Inconclusive,0.19,Equivocal,0.34,NA,G1
+HH080_compost,Spiked_Extraction_Control,compost,0.1,0.09000000000000001,FALSE,NA,No Amp,0.7,Negative,0.4,NA,G2
+HH080_compost,Strongyloides,compost,0.66,0.5940000000000001,FALSE,NA,No Amp,0.22,Negative,0.07,NA,G3
+HH080_compost,Trichuris,compost,0.18,0.162,FALSE,NA,No Amp,0.55,Negative,0.07,NA,G4
+HH080_compost,Vibrio cholerae,compost,0.61,0.549,FALSE,NA,No Amp,0.74,Negative,0.14,NA,G5
+HH080_compost,Yersinia enterocolitica,compost,0.34,0.30600000000000005,FALSE,NA,No Amp,0.32,Negative,0.11,NA,G6
+HH080_compost,blaCTX-M,compost,0.3,0.27,FALSE,NA,No Amp,0.42,Negative,0.29,NA,H1
+HH080_compost,blaNDM,compost,0.4,0.36000000000000004,FALSE,NA,No Amp,0.38,Negative,0.09,NA,H2
+HH080_compost,mecA,compost,0.06,0.054,FALSE,NA,No Amp,0.41,Negative,0.23,NA,H3
+HH080_compost,qnrS,compost,0.64,0.5760000000000001,FALSE,NA,No Amp,0.59,Negative,0.07,NA,H4
+HH080_compost,sul1,compost,0.06,0.054,FALSE,NA,No Amp,0.69,Negative,0.03,NA,H5
+HH080_compost,tetA,compost,0.07,0.06300000000000001,FALSE,NA,Inconclusive,0.88,Equivocal,0.21,NA,H6
+NTC_card34,Adenovirus 40/41,NTC,0.33,0,FALSE,NA,No Amp,0.86,Negative,0.24,NA,A1
+NTC_card34,Aeromonas,NTC,0.31,0,FALSE,NA,No Amp,0.88,Negative,0.45,NA,A2
+NTC_card34,Ancylostoma,NTC,0.16,0,FALSE,NA,No Amp,0.65,Negative,0.32,NA,A3
+NTC_card34,Ascaris,NTC,0.33,0,FALSE,NA,Inconclusive,1.07,Equivocal,0.48,NA,A4
+NTC_card34,Astrovirus,NTC,0.2,0,FALSE,NA,No Amp,0.57,Negative,0.31,NA,A5
+NTC_card34,BacHum,NTC,0.1,0,FALSE,NA,Inconclusive,0.6,Equivocal,0.03,NA,A6
+NTC_card34,Bacteroides fragilis,NTC,0.62,0,FALSE,NA,No Amp,0.87,Negative,0.41,NA,B1
+NTC_card34,Blastocystis,NTC,0.33,0,FALSE,NA,No Amp,0.99,Negative,0.13,NA,B2
+NTC_card34,Campylobacter,NTC,0.35,0,FALSE,NA,No Amp,0.12,Negative,0.25,NA,B3
+NTC_card34,Clostridium difficile,NTC,0.2,0,FALSE,NA,No Amp,0.35,Negative,0.34,NA,B4
+NTC_card34,CrAssphage,NTC,0.1,0,FALSE,NA,No Amp,0.89,Negative,0.37,NA,B5
+NTC_card34,Cryptosporidium,NTC,0.36,0,FALSE,NA,No Amp,0.25,Negative,0.22,NA,B6
+NTC_card34,Cyclospora,NTC,0.15,0,FALSE,NA,No Amp,0.76,Negative,0.25,NA,C1
+NTC_card34,Dientamoeba fragilis,NTC,0.05,0,FALSE,NA,No Amp,0.41,Negative,0.07,NA,C2
+NTC_card34,E. coli O157,NTC,0.38,0,FALSE,NA,No Amp,0.11,Negative,0.16,NA,C3
+NTC_card34,EAEC,NTC,0.69,0,FALSE,NA,No Amp,0.76,Negative,0.21,NA,C4
+NTC_card34,EPEC,NTC,0.67,0,FALSE,NA,No Amp,0.22,Negative,0.21,NA,C5
+NTC_card34,ETEC,NTC,0.08,0,FALSE,NA,No Amp,0.16,Negative,0.33,NA,C6
+NTC_card34,Entamoeba histolytica,NTC,0.08,0,FALSE,NA,No Amp,0.34,Negative,0.09,NA,D1
+NTC_card34,Enterovirus,NTC,0.3,0,FALSE,NA,No Amp,0.84,Negative,0.45,NA,D2
+NTC_card34,Giardia,NTC,0.35,0,FALSE,NA,Inconclusive,0.19,Equivocal,0.29,NA,D3
+NTC_card34,HF183,NTC,0.1,0,FALSE,NA,No Amp,0.07,Negative,0.02,NA,D4
+NTC_card34,Helicobacter pylori,NTC,0.25,0,FALSE,NA,No Amp,0.83,Negative,0.41,NA,D5
+NTC_card34,Hepatitis A,NTC,0.33,0,FALSE,NA,No Amp,0.76,Negative,0.19,NA,D6
+NTC_card34,Hepatitis E,NTC,0.07,0,FALSE,NA,No Amp,0.69,Negative,0.1,NA,E1
+NTC_card34,Listeria monocytogenes,NTC,0.23,0,FALSE,NA,No Amp,0.82,Negative,0.28,NA,E2
+NTC_card34,MS2,NTC,0.1,0,FALSE,NA,No Amp,0.92,Negative,0.26,NA,E3
+NTC_card34,Necator,NTC,0.33,0,FALSE,NA,No Amp,0.94,Negative,0.38,NA,E4
+NTC_card34,No Template Control,NTC,0,0,FALSE,NA,No Amp,0.33,Negative,0.33,NA,E5
+NTC_card34,Norovirus GI,NTC,0.62,0,FALSE,NA,No Amp,0.99,Negative,0.39,NA,E6
+NTC_card34,Norovirus GII,NTC,0.29,0,FALSE,NA,No Amp,0.99,Negative,0.02,NA,F1
+NTC_card34,Rotavirus A,NTC,0.66,0,FALSE,NA,No Amp,0.2,Negative,0.22,NA,F2
+NTC_card34,STEC,NTC,0.7,0,FALSE,NA,No Amp,0.23,Negative,0.34,NA,F3
+NTC_card34,Salmonella,NTC,0.67,0,FALSE,NA,Inconclusive,0.96,Equivocal,0.05,NA,F4
+NTC_card34,Sapovirus,NTC,0.19,0,FALSE,NA,No Amp,0.6,Negative,0.03,NA,F5
+NTC_card34,Shigella,NTC,0.32,0,FALSE,NA,No Amp,0.99,Negative,0.08,NA,F6
+NTC_card34,Sketa22,NTC,0.05,0,FALSE,NA,Inconclusive,1.1,Equivocal,0.04,NA,G1
+NTC_card34,Spiked_Extraction_Control,NTC,0.1,0,FALSE,NA,No Amp,0.87,Negative,0.43,NA,G2
+NTC_card34,Strongyloides,NTC,0.66,0,FALSE,NA,No Amp,1.04,Negative,0.27,NA,G3
+NTC_card34,Trichuris,NTC,0.18,0,FALSE,NA,No Amp,0.98,Negative,0.41,NA,G4
+NTC_card34,Vibrio cholerae,NTC,0.61,0,FALSE,NA,Inconclusive,0.59,Equivocal,0.47,NA,G5
+NTC_card34,Yersinia enterocolitica,NTC,0.34,0,FALSE,NA,No Amp,0.21,Negative,0.1,NA,G6
+NTC_card34,blaCTX-M,NTC,0.3,0,FALSE,NA,No Amp,1.05,Negative,0.25,NA,H1
+NTC_card34,blaNDM,NTC,0.4,0,FALSE,NA,Inconclusive,0.77,Equivocal,0.17,NA,H2
+NTC_card34,mecA,NTC,0.06,0,FALSE,NA,No Amp,0.53,Negative,0.49,NA,H3
+NTC_card34,qnrS,NTC,0.64,0,FALSE,NA,No Amp,0.87,Negative,0.19,NA,H4
+NTC_card34,sul1,NTC,0.06,0,FALSE,NA,No Amp,0.54,Negative,0.01,NA,H5
+NTC_card34,tetA,NTC,0.07,0,FALSE,NA,No Amp,0.56,Negative,0.23,NA,H6

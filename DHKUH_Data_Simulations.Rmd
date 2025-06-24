@@ -39,8 +39,6 @@ sample_metadata <- expand.grid(
 
 ## Simulate survey data
 ```{r survey}
-# Create 140 household IDs
-household_ids <- paste0("HH", sprintf("%03d", 1:140))
 
 # Create tole variable: 20 toles with 7 households each
 tole_ids <- paste0("Tole_", sprintf("%02d", 1:20))
@@ -106,7 +104,7 @@ write_csv(survey_data, "./simulated_data/survey_data_simulated.csv")
 
 ## Simulate IDEXX data
 ```{r idexx}
-# Helper function
+# Helper function for tray counts
 simulate_quanti_tray_counts <- function(n) {
   tibble(
     small_cell_count = sample(0:49, n, replace = TRUE),
@@ -114,9 +112,9 @@ simulate_quanti_tray_counts <- function(n) {
   )
 }
 
-n <- nrow(sample_metadata)  # 420
+n <- nrow(sample_metadata)
 
-# IDEXX data
+# Generate base data
 microbio_data <- sample_metadata %>%
   bind_cols(
     simulate_quanti_tray_counts(n) %>% rename_with(~paste0("total_coliform_", .)),
@@ -125,19 +123,61 @@ microbio_data <- sample_metadata %>%
     simulate_quanti_tray_counts(n) %>% rename_with(~paste0("ar_e_coli_", .))
   )
 
-# ESBL data
+# Assign sample-type-specific prevalence values
 microbio_data <- microbio_data %>%
   mutate(
-    plate_weight = case_when(sample_type == "effluent" | sample_type == "compost" ~ sample(0.301:0.425, n, replace = TRUE),
-                             sample_type == "produce" ~ NA_real_),
-    wet_weight = case_when(sample_type %in% c("effluent", "compost") ~ runif(n, min = 4.901, max = 5.125),
-                           sample_type == "produce" ~ NA_real_),
-    dry_weight = case_when(sample_type == "effluent" ~ sample(2.85:4.55, n, replace = TRUE),
-                           sample_type == "compost" ~ sample(3.81:5.101, n, replace = TRUE),
-                           sample_type == "produce" ~ NA_real_),
-    esbl_e_coli_present = rbinom(n, 1, 0.3),
-    esbl_e_coli_cfu = if_else(esbl_e_coli_present == 1, sample(1:250, n, replace = TRUE), 0)
-  )
+    # Set detection prevalence by sample type
+    tc_prev = case_when(
+      sample_type == "effluent" ~ 0.98,
+      sample_type == "compost" ~ 0.90,
+      sample_type == "produce" ~ 0.60,
+      TRUE ~ 0.70
+    ),
+    ec_prev = case_when(
+      sample_type == "effluent" ~ 0.85,
+      sample_type == "compost" ~ 0.65,
+      sample_type == "produce" ~ 0.30,
+      TRUE ~ 0.40
+    ),
+    ar_tc_prev = case_when(
+      sample_type == "effluent" ~ 0.25,
+      sample_type == "compost" ~ 0.20,
+      sample_type == "produce" ~ 0.05,
+      TRUE ~ 0.10
+    ),
+    ar_ec_prev = case_when(
+      sample_type == "effluent" ~ 0.15,
+      sample_type == "compost" ~ 0.12,
+      sample_type == "produce" ~ 0.03,
+      TRUE ~ 0.05
+    ),
+
+    # Simulate detection outcomes from prevalence
+    tc_detect = rbinom(n, 1, tc_prev),
+    ec_detect = rbinom(n, 1, ec_prev),
+    ar_tc_detect = rbinom(n, 1, ar_tc_prev),
+    ar_ec_detect = rbinom(n, 1, ar_ec_prev),
+
+    # ESBL detection 
+    esbl_prev = case_when(
+      sample_type == "effluent" ~ 0.40,
+      sample_type == "compost" ~ 0.30,
+      sample_type == "produce" ~ 0.05,
+      TRUE ~ 0.10
+    ),
+    esbl_ecoli_detect = rbinom(n, 1, esbl_prev),
+    esbl_e_coli_cfu = if_else(esbl_ecoli_detect == 1, sample(1:250, n, replace = TRUE), 0),
+
+    # Plate weights for AR context (if needed)
+    plate_weight = case_when(sample_type %in% c("effluent", "compost") ~ runif(n, 0.301, 0.425), TRUE ~ NA_real_),
+    wet_weight = case_when(sample_type %in% c("effluent", "compost") ~ runif(n, 4.901, 5.125), TRUE ~ NA_real_),
+    dry_weight = case_when(
+      sample_type == "effluent" ~ runif(n, 2.85, 4.55),
+      sample_type == "compost" ~ runif(n, 3.81, 5.101),
+      TRUE ~ NA_real_
+    )
+  ) %>%
+  select(-tc_prev, -ec_prev, -ar_tc_prev, -ar_ec_prev, -esbl_prev)
 
 # Save and preview
 head(microbio_data)
@@ -188,8 +228,45 @@ simulate_card_file <- function(card_num, samples_on_card, out_dir = "./simulated
 
   full_samples <- bind_rows(samples_on_card, ntc_sample)
 
-  # Define TAC well layout (A1–H6, assuming 48 targets, 8 samples, 6 targets per column)
+  # Define TAC well layout (A1–H6)
   wells <- paste0(rep(LETTERS[1:8], each = 6), rep(1:6, 8))
+
+  # Target list
+  targets <- c(
+    "Campylobacter", "Salmonella", "Shigella", "E. coli O157", "ETEC", "EPEC", 
+    "EAEC", "STEC", "Vibrio cholerae", "Yersinia enterocolitica",
+    "Clostridium difficile", "Aeromonas", "Helicobacter pylori", 
+    "Listeria monocytogenes", "Bacteroides fragilis",
+    "Norovirus GI", "Norovirus GII", "Rotavirus A", "Astrovirus", 
+    "Adenovirus 40/41", "Sapovirus", "Enterovirus", "Hepatitis A", "Hepatitis E",
+    "Giardia", "Cryptosporidium", "Entamoeba histolytica", 
+    "Blastocystis", "Cyclospora", "Dientamoeba fragilis",
+    "Ascaris", "Trichuris", "Ancylostoma", "Necator", "Strongyloides",
+    "blaCTX-M", "blaNDM", "mecA", "tetA", "sul1", "qnrS",
+    "HF183", "CrAssphage", "Sketa22", "BacHum", "MS2", 
+    "Spiked_Extraction_Control", "No Template Control"
+  )
+
+  # Target-specific baseline prevalence (adjust as needed)
+  target_prevalence_map <- c(
+    "Campylobacter" = 0.35, "Salmonella" = 0.67, "Shigella" = 0.32,
+    "E. coli O157" = 0.38, "ETEC" = 0.08, "EPEC" = 0.67, "EAEC" = 0.69, "STEC" = 0.70,
+    "Vibrio cholerae" = 0.61, "Yersinia enterocolitica" = 0.34,
+    "Clostridium difficile" = 0.20, "Aeromonas" = 0.31, "Helicobacter pylori" = 0.25,
+    "Listeria monocytogenes" = 0.23, "Bacteroides fragilis" = 0.62,
+    "Norovirus GI" = 0.62, "Norovirus GII" = 0.29, "Rotavirus A" = 0.66,
+    "Astrovirus" = 0.20, "Adenovirus 40/41" = 0.33, "Sapovirus" = 0.19,
+    "Enterovirus" = 0.30, "Hepatitis A" = 0.33, "Hepatitis E" = 0.07,
+    "Giardia" = 0.35, "Cryptosporidium" = 0.36, "Entamoeba histolytica" = 0.08,
+    "Blastocystis" = 0.33, "Cyclospora" = 0.15, "Dientamoeba fragilis" = 0.05,
+    "Ascaris" = 0.33, "Trichuris" = 0.18, "Ancylostoma" = 0.16,
+    "Necator" = 0.33, "Strongyloides" = 0.66,
+    "blaCTX-M" = 0.30, "blaNDM" = 0.40, "mecA" = 0.06, "tetA" = 0.7,
+    "sul1" = 0.06, "qnrS" = 0.64,
+    "HF183" = 0.10, "CrAssphage" = 0.10, "Sketa22" = 0.05,
+    "BacHum" = 0.10, "MS2" = 0.10,
+    "Spiked_Extraction_Control" = 0.10, "No Template Control" = 0.00
+  )
 
   # Expand data for all targets per sample
   df <- expand_grid(
@@ -199,20 +276,15 @@ simulate_card_file <- function(card_num, samples_on_card, out_dir = "./simulated
     arrange(Sample, Target) %>%
     left_join(full_samples %>% select(sample_id, sample_type), by = c("Sample" = "sample_id")) %>%
     mutate(
-      is_ARG = grepl("bla|tet|sul|qnr|mecA|ARG", Target, ignore.case = TRUE),
-      
-      # Assign realistic detection probabilities
+      baseline_prob = unname(target_prevalence_map[Target]),
       detect_prob = case_when(
         sample_type == "NTC" ~ 0.00,
-        sample_type == "effluent" & is_ARG ~ 0.70,
-        sample_type == "effluent" ~ 0.55,
-        sample_type == "compost" & is_ARG ~ 0.40,
-        sample_type == "compost" ~ 0.45,
-        sample_type == "produce" & is_ARG ~ 0.15,
-        sample_type == "produce" ~ 0.05,
-        TRUE ~ 0.2
+        sample_type == "effluent" ~ baseline_prob * 1.2,
+        sample_type == "compost" ~ baseline_prob * 0.9,
+        sample_type == "produce" ~ baseline_prob * 0.6,
+        TRUE ~ baseline_prob
       ),
-      
+      detect_prob = pmin(detect_prob, 0.95),  # cap at 95%
       is_detected = runif(n()) < detect_prob,
       Cq = ifelse(is_detected, round(runif(n(), 20, 35), 2), NA_real_),
       AMP = case_when(
@@ -228,18 +300,15 @@ simulate_card_file <- function(card_num, samples_on_card, out_dir = "./simulated
       ),
       `Cq Conf` = ifelse(!is.na(Cq), round(runif(n(), 0.8, 1.0), 2), round(runif(n(), 0.0, 0.5), 2)),
       `Cq SD` = ifelse(!is.na(Cq), round(runif(n(), 0.1, 1.0), 2), NA_real_)
-    )
-
-  # Assign wells
-  df <- df %>%
+    ) %>%
     group_by(Sample) %>%
     mutate(Well = rep(wells[1:length(targets)], length.out = n())) %>%
     ungroup()
 
-  # Create output directory if needed
-  dir.create(out_dir, showWarnings = FALSE)
+  # Create output directory
+  dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
 
-  # Create safe filename
+  # Safe filename
   date <- Sys.Date() + days(card_num)
   time <- format(Sys.time(), "%H%M%S")
   file_name <- paste0("card", sprintf("%02d", card_num), "_hka_", format(date, "%Y%m%d"),
