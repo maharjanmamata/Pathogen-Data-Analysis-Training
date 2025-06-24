@@ -1,0 +1,198 @@
+---
+title: 'Script 2: Descriptive Analysis of Pathogen and AMR Data'
+author: "Heather Amato"
+date: "2025-06-20"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# Install packages
+#install.packages(c("here","tidyverse","janitor","pathwork","pheatmap"))
+
+# Load libraries
+library(here)
+library(tidyverse)
+library(janitor)
+library(patchwork)
+library(pheatmap)
+```
+
+### Load cleaned datasets
+```{r load.data}
+microbio_clean <- read_csv(here("clean_data", "microbial_data_cleaned.csv"))
+tac_clean <- read_csv(here("clean_data", "tac_data_cleaned.csv"))
+```
+
+## TAC Data Analysis
+#### Calculate prevalence of each TAC target
+```{r tac.prevalence}
+tac_prev <- tac_clean %>%
+  group_by(Target) %>%
+  summarize(prevalence = mean(detect, na.rm = TRUE), # remove NA values in calculations
+            sd = sd(detect, na.rm = TRUE)) %>%
+  arrange(desc(prevalence)) # show pathogen targets in order of highest to lowest prevalence
+
+head(tac_prev, 10)
+```
+
+### Visualize prevalence of top 10 TAC targets
+```{r plot-tac-prevalence}
+tac_prev %>%
+  top_n(10, prevalence) %>% # select top 10 values of prevalence 
+  ggplot(aes(x = reorder(Target, prevalence), # plot x (Target) in order of prevalence values
+             y = prevalence)) +  
+  geom_col(fill = "steelblue") +
+  coord_flip() + # flip x and y axis so barplot is sideways
+  labs(title = "Top 10 Pathogen Prevalence (TAC)", x = "Target", y = "Prevalence") +
+  theme_bw() + # use this for set themes (theme_minimal(), theme_classic(), etc)
+  theme(axis.ticks.y = element_blank(), # customize theme (remove axis ticks)
+        axis.title = element_text(size = 11, face = "bold"))
+
+```
+
+#### Summarize pathogen burden per sample
+```{r burden.tac}
+tac_burden <- tac_clean %>%
+  group_by(household_id, sample_type) %>% # for each household and sample type
+  summarize(num_detected = sum(detect, na.rm = TRUE)) # sum total detects
+
+# summarize new variable indicating total number detected by sample
+summary(tac_burden$num_detected) 
+```
+
+### Visualize distribution of pathogen burden overall
+```{r plot.tac.burden}
+# Use ggplot to plot a histogram 
+tac_burden %>%
+  ggplot(aes(x = num_detected, fill = sample_type)) +
+  geom_histogram(binwidth = 1, alpha = 0.8) + # test out what happens when you change binwidth 
+  labs(title = "Number of Pathogens Detected per Sample", fill = "Sample Type",
+       x = "# Pathogens", y = "Count") +
+  theme_bw() +
+  theme(axis.title = element_text(size = 11, face = "bold"),
+        legend.title = element_text(size = 11, face = "bold"))
+```
+
+#### Visualize burden by target category and sample type 
+```{r }
+# Create a lookup table to categorize TAC targets
+tac_categories <- tibble::tibble(
+  Target = unique(tac_clean$Target),
+  Category = case_when(
+    grepl("18S|Giardia|Cryptosporidium|Entamoeba", Target, ignore.case = TRUE) ~ "Parasite",
+    grepl("Adeno|Rota|Noro|Astro|Sapovirus", Target, ignore.case = TRUE) ~ "Virus",
+    grepl("Shigella|Salmonella|Campylo|E. coli|Vibrio|Aeromonas|Kleb|Clostrid|Enterococcus", Target, ignore.case = TRUE) ~ "Bacteria",
+    grepl("ARG|CTX|NDM|OXA|SHV|KPC|VIM", Target, ignore.case = TRUE) ~ "ARG",
+    grepl("Ascaris|Trichuris|Strongyloides|Hookworm", Target, ignore.case = TRUE) ~ "Helminth",
+    TRUE ~ "Other"
+  )
+)
+
+# Merge categories into the TAC data
+tac_clean <- tac_clean %>%
+  left_join(tac_categories, by = "Target") 
+
+tac_categorized <- tac_clean %>%
+  group_by(sample_type, Category) %>%
+  summarize(
+    prevalence = mean(detect, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+# Set Category variable as ordered factor
+tac_categorized$Category <- factor(tac_categorized$Category, 
+                                   levels = c("Other", "Helminth","Parasite","Virus","Bacteria","ARG"))
+
+# Plot as a heatmap
+ggplot(tac_categorized, aes(x = sample_type, y = Category, fill = prevalence)) +
+  geom_tile(color = "white") +
+  scale_fill_viridis_c(option = "C", name = "Prevalence") +
+  geom_text(aes(label = sprintf("%.1f%%", prevalence * 100)), size = 3, color = "black") +
+  labs(title = "Pathogen Burden by Category and Sample Type",
+       x = "Sample Type", y = "Category") +
+  theme_minimal(base_size = 11) + # set font size for entire plot
+  coord_fixed() + # forces x and y axes to be plotted in proportion (squares instead of rectangles)
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        axis.title = element_text(face = "bold"),
+        legend.title = element_text(face = "bold"))
+```
+#### Plot heatmap of detection for each samples and all targets
+```{r}
+# Plot as a heatmap
+ggplot(tac_clean, aes(x = household_id, y = Target, fill = as.factor(detect))) +
+  geom_tile(color = "white") +
+  scale_fill_manual(values = c("grey","purple")) +
+ # geom_text(aes(label = sprintf("%.1f%%", prevalence * 100)), size = 3, color = "black") +
+  labs(title = "Pathogen Burden", x = "Sample", y = "Target", fill = "Detect") +
+  facet_wrap(~sample_type, scales = "free_x", nrow = 3) +
+  theme_minimal(base_size = 11) + # set font size for entire plot
+ # coord_fixed() + # forces x and y axes to be plotted in proportion (squares instead of rectangles)
+  theme(axis.text.x = element_blank(),
+        axis.title = element_text(face = "bold"),
+        legend.title = element_text(face = "bold"))
+```
+
+## Culture Data Analysis
+#### Prevalence of bacterial isolates
+```{r isolate-prevalence}
+microbio_clean %>%
+  summarize(
+    ecoli_positive = mean(ec_detect),
+    ar_ecoli_positive = mean(ar_ec_detect),
+    tc_positive = mean(tc_detect),
+    ar_tc_positive = mean(ar_tc_detect)
+  )
+```
+
+### AMR profile summary
+```{r amr-summary}
+amr_profile <- microbio_clean %>%
+  count(sample_type, esbl = adjusted_esbl_cfu > 0) %>%
+  mutate(freq = n / sum(n))
+
+amr_profile
+```
+
+### Visualize ESBL prevalence by sample type
+```{r esbl-plot}
+microbio_clean %>%
+  mutate(esbl_detect = adjusted_esbl_cfu > 0) %>%
+  group_by(sample_type) %>%
+  summarize(esbl_prev = mean(esbl_detect)) %>%
+  ggplot(aes(x = sample_type, y = esbl_prev, fill = sample_type)) +
+  geom_col() +
+  labs(title = "ESBL Prevalence by Sample Type", y = "Prevalence")
+```
+
+## Merge Datasets by Sample or Household
+### Join by household ID
+```{r join-data}
+tac_household <- tac_clean %>% select(Sample, Target, detect) %>% 
+  pivot_wider(names_from = Target, values_from = detect) %>%
+  mutate(household_id = str_extract(Sample, "HH\\d+"))
+
+joined_data <- left_join(microbio_clean, tac_household, by = "household_id")
+```
+
+## Concordance Between TAC and Culture for E. coli
+```{r concordance}
+joined_data %>%
+  select(ec_detect, `E.coli`) %>%
+  tabyl(ec_detect, `E.coli`) %>%
+  adorn_percentages("row") %>%
+  adorn_pct_formatting(digits = 1)
+```
+
+## Save Outputs (Optional)
+```{r save-results, eval=FALSE}
+write_csv(tac_prev, here("outputs", "tac_prevalence.csv"))
+write_csv(tac_burden, here("outputs", "tac_burden_summary.csv"))
+write_csv(amr_profile, here("outputs", "amr_summary.csv"))
+```
+
+## Workshop Tasks (Optional Sections to Complete)
+- Add MDR prevalence summary by sample type
+- Generate heatmap of most common TAC pathogens
+- Compare burden by household or site

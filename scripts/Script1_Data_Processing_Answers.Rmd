@@ -8,49 +8,60 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
+# Install packages
+#install.packages(c("here","tidyverse","dplyr","quantitray","readxl"))
+
 # Load libraries
 library(here)
 library(tidyverse)
 library(dplyr)
 library(quantitray)
+library(readxl)
+
+# Check current directory & set new directory if needed
+here()
 ```
 
 #### Read data into RStudio
 ```{r read.dat}
-here()
-
+# Read microbiological data
+# (there are also packages you can install and load, like read_xl(), for reading .xlsx files)
 microbio_df <- read_csv(here("simulated_data", "microbial_data_simulated.csv"))
 
+# Folder path for TAC .csvs
 tac_folder <- here("simulated_data", "simulated_cards")
 
-tac_raw <- list.files(tac_folder, full.names = TRUE, pattern = "\\.csv$") %>%
+# Read and combine all TAC .xlsx output files into tac_raw
+tac_raw <- list.files(tac_folder, full.names = TRUE, pattern = "\\.xlsx$") %>%
   map_dfr(read_csv, .id = "source_file", show_col_types = FALSE)
 ```
 
 ## MICROBIAL DATA
 #### Check micro (IDEXX) data format
 ```{r micro.check}
-names(microbio_df)
-summary(microbio_df)
-head(microbio_df, n=8)
-unique(microbio_df$sample_id) %>% length()
-table(microbio_df$sample_type)
+# Code provided to check structure
+names(microbio_df) # variable names
+summary(microbio_df) # summary of data
+head(microbio_df, n=8) # view top 8 rows
+unique(microbio_df$sample_id) %>% length() # number of samples
+table(microbio_df$sample_type) # number of rows in dataset by type
 ```
 
 #### Clean and process microbio dataset
 ```{r clean.micro}
 microbio_clean <- microbio_df %>%
   mutate(
-    household_id = str_extract(sample_id, "HH\\d+"),
-    sample_type = str_extract(sample_id, "effluent|compost|produce"),
+    household_id = str_extract(sample_id, "HH\\d+"), # extract household id from sample_id
+    sample_type = str_extract(sample_id, "effluent|compost|produce"), # extract sample type from sample_id
     wet_soil_mass = wet_weight - plate_weight,
     dry_soil_mass = dry_weight - plate_weight,
-    soil_moisture = (wet_soil_mass - dry_soil_mass) / dry_soil_mass * 100
+    soil_moisture = (wet_soil_mass - dry_soil_mass) / dry_soil_mass *100 # estimate soil moisture content as percent
   ) %>%
   dplyr::select(
     -c(sample_id, plate_weight, wet_weight, dry_weight, wet_soil_mass, dry_soil_mass)
-  )
+    )
 
+# Check new variables
 table(microbio_clean$sample_type)
 summary(microbio_clean$soil_moisture)
 ```
@@ -59,41 +70,48 @@ summary(microbio_clean$soil_moisture)
 ```{r mpn}
 microbio_clean <- microbio_clean %>%
   mutate(
+    # Total coliform
     tc_mpn = quantify_mpn(total_coliform_large_cell_count, total_coliform_small_cell_count, method = "qt-2000"),
     tc_mpn_lo = quantify_95lo(total_coliform_large_cell_count, total_coliform_small_cell_count, method = "qt-2000"),
     tc_mpn_hi = quantify_95hi(total_coliform_large_cell_count, total_coliform_small_cell_count, method = "qt-2000"),
-
+    # E. coli
     ecoli_mpn = quantify_mpn(e_coli_large_cell_count, e_coli_small_cell_count, method = "qt-2000"),
     ecoli_mpn_lo = quantify_95lo(e_coli_large_cell_count, e_coli_small_cell_count, method = "qt-2000"),
     ecoli_mpn_hi = quantify_95hi(e_coli_large_cell_count, e_coli_small_cell_count, method = "qt-2000"),
-
+    # antibiotic-resistant TC
     ar_tc_mpn = quantify_mpn(ar_total_coliform_large_cell_count, ar_total_coliform_small_cell_count, method = "qt-2000"),
     ar_tc_mpn_lo = quantify_95lo(ar_total_coliform_large_cell_count, ar_total_coliform_small_cell_count, method = "qt-2000"),
     ar_tc_mpn_hi = quantify_95hi(ar_total_coliform_large_cell_count, ar_total_coliform_small_cell_count, method = "qt-2000"),
-
+    # antibiotic-resistant E. coli
     ar_ecoli_mpn = quantify_mpn(ar_e_coli_large_cell_count, ar_e_coli_small_cell_count, method = "qt-2000"),
     ar_ecoli_mpn_lo = quantify_95lo(ar_e_coli_large_cell_count, ar_e_coli_small_cell_count, method = "qt-2000"),
     ar_ecoli_mpn_hi = quantify_95hi(ar_e_coli_large_cell_count, ar_e_coli_small_cell_count, method = "qt-2000")
   )
+```
 
-microbio_clean <- microbio_clean %>%
-  mutate(across(everything(), ~replace_na(.x, 0))) %>%
+```{r mpn.check}
+# Check dataset
+microbio_clean %>% 
+  select(household_id, sample_type, tc_mpn:ar_ecoli_mpn_hi) %>% 
+  head(10)
+```
+
+```{r mpn.nafix}
+# Replace NA values with 0s and create detection indicators
+microbio_clean <- microbio_clean %>% 
   mutate(
-    tc_detect = if_else(tc_mpn > 0, 1, 0),
+    across(everything(), ~replace_na(.x, 0)), # replace NAs with 0s across all variables in dataframe
+    tc_detect = if_else(tc_mpn > 0, 1, 0), # set detect = 1 if mpn > 0
     ar_tc_detect = if_else(ar_tc_mpn > 0, 1, 0),
     ec_detect = if_else(ecoli_mpn > 0, 1, 0),
     ar_ec_detect = if_else(ar_ecoli_mpn > 0, 1, 0)
   )
-
-table(microbio_clean$tc_detect)
-table(microbio_clean$ar_tc_detect)
-table(microbio_clean$ec_detect)
-table(microbio_clean$ar_ec_detect)
 ```
 
 #### Transform ESBL CFU results
+Plate count data for ESBL-E. coli should be adjusted for moisture content and sample volume (for effluent and compost samples only), and should be log-transformed to create a normal (bell-curve) distribution for statistical analyses.  
 ```{r plot.cfu}
-hist(microbio_clean$esbl_e_coli_cfu)
+hist(microbio_clean$esbl_e_coli_cfu) # check distribution with histogram
 ```
 
 ```{r adjust.esbl}
@@ -111,19 +129,14 @@ hist(microbio_clean2$log_adjusted_esbl_cfu)
 ```
 
 ``` {r hist.esbl.samples}
+# further investigate distribution with a histogram by sample type
 ggplot(microbio_clean2, aes(x = log_adjusted_esbl_cfu, fill = sample_type)) +
   geom_histogram(bins = 30, alpha = 0.6, position = "identity") +
   theme_minimal()
 ```
 
 #### Transform MPN results
-```{r plot.mpn}
-hist(microbio_clean2$tc_mpn)
-hist(microbio_clean2$ecoli_mpn)
-hist(microbio_clean2$ar_tc_mpn)
-hist(microbio_clean2$ar_ecoli_mpn)
-```
-
+Next we will transform IDEXX MPN results. This process is similar to the above steps taken for ESBL E. coli, but now we will do this across multiple variables (each of the bacterial indicators).  
 ```{r adjust.mpn}
 microbio_clean2 <- microbio_clean2 %>%
   mutate(across(c(tc_mpn, ar_tc_mpn, ecoli_mpn, ar_ecoli_mpn),
@@ -134,35 +147,44 @@ microbio_clean2 <- microbio_clean2 %>%
                 .names = "adjusted_{.col}")) %>%
   mutate(across(matches("^adjusted_.*_adj$"), ~ log10(.) + 1, .names = "log_{.col}"))
 
-hist(microbio_clean2$log_adjusted_tc_mpn_adj)
-hist(microbio_clean2$log_adjusted_ecoli_mpn_adj)
-hist(microbio_clean2$log_adjusted_ar_ecoli_mpn_adj)
+# Check distributions before vs. after transforming
+hist(microbio_clean2$tc_mpn) ; hist(microbio_clean2$ecoli_mpn)
+hist(microbio_clean2$ar_tc_mpn) ; hist(microbio_clean2$ar_ecoli_mpn)
+hist(microbio_clean2$log_adjusted_tc_mpn_adj);  hist(microbio_clean2$log_adjusted_ecoli_mpn_adj)
+hist(microbio_clean2$log_adjusted_ar_tc_mpn_adj); hist(microbio_clean2$log_adjusted_ar_ecoli_mpn_adj)
 ```
 
 ## TAC DATA
 #### Check TAC data format
 ```{r}
+# Check TAC data
 names(tac_raw)
 summary(tac_raw)
-head(tac_raw, n=10)
-unique(tac_raw$Sample) %>% length()
-unique(tac_raw$Sample[grepl("NTC", tac_raw$Sample)]) %>% length()
-unique(tac_raw$Sample[grepl("NTC", tac_raw$Sample) & tac_raw$Result == "Positive"]) %>% length()
+head(tac_raw)
+
+unique(tac_raw$Sample) %>% length() # number of unique samples
+unique(tac_raw$Sample[grepl("NTC", tac_raw$Sample)]) %>% length() # number of non-template controls
+unique(tac_raw$Sample[grepl("NTC", tac_raw$Sample) & tac_raw$Result == "Positive"]) %>% length() # N failed NTCs
 ```
 
 #### Clean TAC data
 ```{r clean.tac}
+# Workshop task: Clean TAC data and extract variables
 tac_clean <- tac_raw %>%
-  filter(!grepl("NTC", Sample, ignore.case = TRUE)) %>%
+  filter(!grepl("NTC", Sample, ignore.case = TRUE)) %>% # remove non-template controls
+
+# extract household_id and sample_type and create binary detect variable here
   mutate(
     household_id = str_extract(Sample, "HH\\d+"),
     sample_type = str_extract(Sample, "effluent|compost|produce"),
     detect = if_else(Result == "Positive", 1, 0)
   )
+
 View(tac_clean)
 ```
 
 ## Save final datasets
+Select whatever variables you need for the analysis and save the cleaned datasets in a folder (clean_data) within the folder you created for the GitHub repository. Make sure you create the clean_data folder before running the code.  
 ```{r final.data}
 microbio_clean3 <- microbio_clean2 %>%
   select(household_id, sample_type, soil_moisture, esbl_ec_cfu = esbl_e_coli_cfu,

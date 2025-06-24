@@ -20,8 +20,6 @@ library(readxl)
 
 # Check current directory & set new directory if needed
 here()
-setwd("/Users/hkamato/Desktop/GitHub/Pathogen-Data-Analysis-Training")
-here() ## won't change directory keeps loading old file path
 ```
 
 ## Training Module 1. Microbiology lab results and qPCR data cleaning
@@ -161,14 +159,15 @@ microbio_clean2 <- microbio_clean2 %>%
     across(c(tc_mpn, ar_tc_mpn, ecoli_mpn, ar_ecoli_mpn),
                 ~ if_else(. == 0, 0.5, .), # set 0s to 1/2 lower limit of detection (1 MPN) 
                 .names = "{.col}_adj")) %>%
-  mutate(across(matches("_adj$"), # only for adjusted variables 
+  mutate(
+    across(matches("_adj$"), # only for adjusted variables 
                 ~ if_else(sample_type %in% c("compost", "effluent"), . / (1 - moisture_fraction) / 2, . / 2),
                 .names = "adjusted_{.col}")) %>%
   # Add code for log10 transformation to all adjusted MPN variables here
   
   )
 
-# Add code to check distribution of adjusted MPN variables using a histogram here
+# Add code to check distribution of unadjusted vs. adjusted MPN variables using a histogram here
 
 ```
 
@@ -180,9 +179,9 @@ names(tac_raw)
 summary(tac_raw)
 head(tac_raw)
 
-unique(tac_raw$Sample) %>% length()
-unique(tac_raw$Sample[grepl("NTC", tac_raw$Sample)]) %>% length()
-unique(tac_raw$Sample[grepl("NTC", tac_raw$Sample) & tac_raw$Result == "Positive"]) %>% length()
+unique(tac_raw$Sample) %>% length() # number of unique samples
+unique(tac_raw$Sample[grepl("NTC", tac_raw$Sample)]) %>% length() # number of non-template controls
+unique(tac_raw$Sample[grepl("NTC", tac_raw$Sample) & tac_raw$Result == "Positive"]) %>% length() # N failed NTCs
 ```
 
 #### Clean TAC data

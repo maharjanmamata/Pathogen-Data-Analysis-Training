@@ -185,20 +185,36 @@ simulate_card_file <- function(card_num, samples_on_card, out_dir = "./simulated
     household_id = NA,
     sample_type = "NTC"
   )
-  
+
   full_samples <- bind_rows(samples_on_card, ntc_sample)
 
   # Define TAC well layout (A1–H6, assuming 48 targets, 8 samples, 6 targets per column)
   wells <- paste0(rep(LETTERS[1:8], each = 6), rep(1:6, 8))
 
-  # Expand data for all targets
+  # Expand data for all targets per sample
   df <- expand_grid(
     Sample = full_samples$sample_id,
     Target = targets
   ) %>%
     arrange(Sample, Target) %>%
+    left_join(full_samples %>% select(sample_id, sample_type), by = c("Sample" = "sample_id")) %>%
     mutate(
-      Cq = ifelse(Sample == ntc_sample$sample_id, NA, ifelse(runif(n()) < 0.3, round(runif(n(), 20, 35), 2), NA_real_)),
+      is_ARG = grepl("bla|tet|sul|qnr|mecA|ARG", Target, ignore.case = TRUE),
+      
+      # Assign realistic detection probabilities
+      detect_prob = case_when(
+        sample_type == "NTC" ~ 0.00,
+        sample_type == "effluent" & is_ARG ~ 0.70,
+        sample_type == "effluent" ~ 0.55,
+        sample_type == "compost" & is_ARG ~ 0.40,
+        sample_type == "compost" ~ 0.45,
+        sample_type == "produce" & is_ARG ~ 0.15,
+        sample_type == "produce" ~ 0.05,
+        TRUE ~ 0.2
+      ),
+      
+      is_detected = runif(n()) < detect_prob,
+      Cq = ifelse(is_detected, round(runif(n(), 20, 35), 2), NA_real_),
       AMP = case_when(
         !is.na(Cq) ~ "Amp",
         runif(n()) < 0.1 ~ "Inconclusive",
@@ -214,7 +230,7 @@ simulate_card_file <- function(card_num, samples_on_card, out_dir = "./simulated
       `Cq SD` = ifelse(!is.na(Cq), round(runif(n(), 0.1, 1.0), 2), NA_real_)
     )
 
-  # Assign wells (repeat A1–H6 for each target)
+  # Assign wells
   df <- df %>%
     group_by(Sample) %>%
     mutate(Well = rep(wells[1:length(targets)], length.out = n())) %>%

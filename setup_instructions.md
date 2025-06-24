@@ -1,4 +1,5 @@
 # Workshop Setup Instructions: Running the Pathogen Data Analysis Training Code
+# June 25-27, 2026
 
 To complete the hands-on exercises on your own computer without affecting the original files, please follow these steps:
 
