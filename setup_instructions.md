@@ -28,6 +28,7 @@ To complete the hands-on exercises on your own computer without affecting the or
      **`Pathogen-Data-Analysis-Training`**
    - Choose a local path where you'd like to store the files (e.g., `Documents/GitHub/`).
    - Click **Clone**.
+   - Select **For your own purposes** to create your own repository for this training.  
 
 ---
 
