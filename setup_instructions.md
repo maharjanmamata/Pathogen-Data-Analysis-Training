@@ -12,23 +12,24 @@ To complete the hands-on exercises on your own computer without affecting the or
 
 ---
 
-##️ 2. Fork the Workshop Repository
-1. In your web browser, visit the main GitHub repository for this workshop (https://github.com/HeatherKAmato/Pathogen-Data-Analysis-Training).
-2. Click the **“Fork”** button at the top-right corner of the page.
-3. In the popup, name your forked repository:  
-   **`Pathogen-Data-Analysis-Training`**
-4. Click **Create Fork**.
+## 2. Clone the Workshop Repository
+1. In your web browser, visit the main GitHub repository for this workshop:  
+   [https://github.com/HeatherKAmato/Pathogen-Data-Analysis-Training](https://github.com/HeatherKAmato/Pathogen-Data-Analysis-Training)
+2. In GitHub Desktop:
+   - Go to **File → Clone Repository...**
+   - Select the workshop repository from the list or paste the URL.
+   - Choose a local path where you'd like to store the files (e.g., `Documents/GitHub/`).
+   - Click **Clone**.
 
 ---
 
-## 3. Clone Your Fork Using GitHub Desktop
+## 3. Create a New Branch
 1. In GitHub Desktop:
-   - Go to **File → Clone Repository...**
-   - Under the **“GitHub.com”** tab, select your fork:  
-     **`Pathogen-Data-Analysis-Training`**
-   - Choose a local path where you'd like to store the files (e.g., `Documents/GitHub/`).
-   - Click **Clone**.
-   - Select **For your own purposes** to create your own repository for this training.  
+   - Click on the **"Current Branch"** dropdown.
+   - Click **"New Branch"**.
+   - Name your branch something like `analysis-day1` or `my-edits`.
+   - Click **Create Branch**.
+2. This keeps your work organized and allows you to sync updates without affecting the `main` branch.
 
 ---
 
@@ -40,15 +41,18 @@ To complete the hands-on exercises on your own computer without affecting the or
 
 ---
 
-## 5. Save and Commit Your Changes (Optional)
-You can use GitHub Desktop to save your progress:
+## 5. Save and Commit Your Changes
+Use GitHub Desktop to save and track your work:
 1. After making changes in RStudio, go back to GitHub Desktop.
 2. You should see your changed files listed.
-3. Write a short **summary of your changes**, and click **Commit to main**.
-4. Click **Push origin** to upload your changes to your GitHub fork.
+3. Write a short **summary of your changes**, and click **Commit to your branch**.
+4. Click **Push origin** to upload your branch and changes to GitHub.
 
 ---
 
 ## Reminder
-**As long as you're working in your own forked copy of the repository, you will not affect the instructor's files or the main branch**. Feel free to experiment, take notes, and try running different versions of the code!
+As long as you're working in your **own branch**, you won’t affect the main branch or other participants.  
+Be sure to regularly **pull** any new changes from the instructor by clicking **"Fetch origin"** and **"Pull origin"** in GitHub Desktop.
+
+Let us know if you have questions or need help!
 
