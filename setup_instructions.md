@@ -36,7 +36,7 @@ To complete the hands-on exercises on your own computer without affecting the or
 1. Open **RStudio**.
 2. Go to **File → Open Project** and navigate to your cloned folder:  
    `Pathogen-Data-Analysis-Training`
-3. Open the R Markdown script (e.g., `Script1_Workshop_Version.Rmd`) and start working through the code chunks.
+3. Open the R Markdown script (e.g., `Script1_Data_Processing.Rmd`) and start working through the code chunks.
 
 ---
 
