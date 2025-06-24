@@ -32,7 +32,7 @@ here()
 microbio_df <- read_csv(here("simulated_data", "microbial_data_simulated.csv"))
 
 # Folder path for TAC .csvs
-tac_folder <- here("simulated_data", "simulated_cards")
+tac_folder <- here("simulated_data", "simulated_cards")  
 
 # Read and combine all TAC .xlsx output files into tac_raw
 tac_raw <- list.files(tac_folder, full.names = TRUE, pattern = "\\.xlsx$") %>%
