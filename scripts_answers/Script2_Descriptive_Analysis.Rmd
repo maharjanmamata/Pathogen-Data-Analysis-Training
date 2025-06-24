@@ -9,14 +9,17 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 
 # Install packages
-#install.packages(c("here","tidyverse","janitor","pathwork","pheatmap"))
+#install.packages(c("here","tidyverse","janitor","patchwork","pheatmap"))
 
 # Load libraries
 library(here)
 library(tidyverse)
 library(janitor)
-library(patchwork)
 library(pheatmap)
+library(patchwork) # patchwork requires R ≥ 3.3.0.
+
+# Check R version
+version$version.string
 ```
 
 ### Load cleaned datasets
@@ -77,15 +80,16 @@ tac_burden %>%
 
 #### Visualize burden by target category and sample type 
 ```{r }
-# Create a lookup table to categorize TAC targets
 tac_categories <- tibble::tibble(
   Target = unique(tac_clean$Target),
   Category = case_when(
-    grepl("18S|Giardia|Cryptosporidium|Entamoeba", Target, ignore.case = TRUE) ~ "Parasite",
-    grepl("Adeno|Rota|Noro|Astro|Sapovirus", Target, ignore.case = TRUE) ~ "Virus",
-    grepl("Shigella|Salmonella|Campylo|E. coli|Vibrio|Aeromonas|Kleb|Clostrid|Enterococcus", Target, ignore.case = TRUE) ~ "Bacteria",
-    grepl("ARG|CTX|NDM|OXA|SHV|KPC|VIM", Target, ignore.case = TRUE) ~ "ARG",
-    grepl("Ascaris|Trichuris|Strongyloides|Hookworm", Target, ignore.case = TRUE) ~ "Helminth",
+    grepl("Ascaris|Trichuris|Strongyloides|Ancylostoma|Necator", Target, ignore.case = TRUE) ~ "Helminth",
+    grepl("Giardia|Cryptosporidium|Entamoeba|Blastocystis|Cyclospora|Dientamoeba", Target, ignore.case = TRUE) ~ "Parasite",
+    grepl("Adeno|Rota|Noro|Astro|Sapovirus|Enterovirus|Hepatitis", Target, ignore.case = TRUE) ~ "Virus",
+    grepl("Shigella|Salmonella|Campylo|E. coli|ETEC|EPEC|EAEC|STEC|Vibrio|Yersinia|Clostrid|Aeromonas|Helicobacter|Listeria|Bacteroides", 
+          Target, ignore.case = TRUE) ~ "Bacteria",
+    grepl("bla|mecA|tetA|sul1|qnrS", Target, ignore.case = TRUE) ~ "ARG",
+    grepl("HF183|CrAssphage|Sketa22|BacHum|MS2|Spiked|Control|NTC", Target, ignore.case = TRUE) ~ "Control",
     TRUE ~ "Other"
   )
 )
@@ -118,12 +122,14 @@ ggplot(tac_categorized, aes(x = sample_type, y = Category, fill = prevalence)) +
         axis.title = element_text(face = "bold"),
         legend.title = element_text(face = "bold"))
 ```
-#### Plot heatmap of detection for each samples and all targets
+#### Plot heatmap of ARG detection for each samples and all targets
 ```{r}
 # Plot as a heatmap
-ggplot(tac_clean, aes(x = household_id, y = Target, fill = as.factor(detect))) +
+tac_clean %>% 
+  filter(Category == "ARG") %>% 
+  ggplot(aes(x = household_id, y = Target, fill = as.factor(detect))) +
   geom_tile(color = "white") +
-  scale_fill_manual(values = c("grey","purple")) +
+  scale_fill_manual(values = c("white","purple")) +
  # geom_text(aes(label = sprintf("%.1f%%", prevalence * 100)), size = 3, color = "black") +
   labs(title = "Pathogen Burden", x = "Sample", y = "Target", fill = "Detect") +
   facet_wrap(~sample_type, scales = "free_x", nrow = 3) +

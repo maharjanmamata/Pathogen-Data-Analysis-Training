@@ -9,7 +9,10 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 
 # Install packages
-#install.packages(c("here","tidyverse","dplyr","quantitray","readxl"))
+install.packages(c("here","tidyverse","dplyr","readxl"))
+
+install.packages("remotes")                        # if not already installed
+remotes::install_github("jknappe/quantitray")      # installs the package directly from GitHub
 
 # Load libraries
 library(here)
