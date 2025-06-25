@@ -30,7 +30,9 @@ This guide is designed to help you use **GitHub Desktop** during a data training
 - After committing, click `Push origin` to upload your changes to GitHub.
 - You may need to log into GitHub if prompted.
 
+### 6. After the workshop, 
 ---
+
 
 ## 🔁 Forking vs. Branching: Which to Use?
 
@@ -43,6 +45,7 @@ This guide is designed to help you use **GitHub Desktop** during a data training
 - **Creates a new branch** within the shared workshop repo.
 - Best for short-term edits when you have write access.
 - Easier to help troubleshoot during the workshop.
+
 
 ### Instructor Recommendation
 | Goal                        | Recommendation                          |

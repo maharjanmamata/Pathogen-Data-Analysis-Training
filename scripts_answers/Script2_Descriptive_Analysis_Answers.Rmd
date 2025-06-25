@@ -208,6 +208,8 @@ microbio_clean %>%
 ggsave( here("figures_answers", "ESBL_barchart.png"), dpi = 300, width = 5, height = 3, unit = "in")
 ```
 
+#### ADD BOXPLOT OF ESBL CFU HERE #### 
+
 ## Merge TAC and Microbio Datasets by Sample 
 #### Join by household ID
 Reshaping and merging data are key tasks in data processing for analysis. 
