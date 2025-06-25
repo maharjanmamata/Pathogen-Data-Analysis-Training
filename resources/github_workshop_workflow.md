@@ -1,6 +1,6 @@
-# GitHub Desktop Workflow Guide for Workshop Participants
+# GitHub Desktop Workflow Guide
 
-This guide is designed to help you use **GitHub Desktop** during a data training workshop. It includes basic setup, best practices, and how to work collaboratively with others.
+This guide is designed to help you use **GitHub Desktop** for research collaborations. It includes basic setup, best practices, and how to work collaboratively with others.
 
 ---
 
@@ -30,7 +30,10 @@ This guide is designed to help you use **GitHub Desktop** during a data training
 - After committing, click `Push origin` to upload your changes to GitHub.
 - You may need to log into GitHub if prompted.
 
-### 6. After the workshop, 
+### 6. Pull Request
+- If you want to commit your changes to the main repository from your branch, submit a pull request
+- The administrator/owner of the main repo will review and accept your request
+- Changes made in your branch will be merged with the main repo
 ---
 
 
