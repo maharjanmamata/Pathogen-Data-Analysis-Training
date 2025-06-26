@@ -4,22 +4,24 @@ author: "Heather Amato"
 date: "2025-06-22"
 output: html_document
 ---
-white for notes and in run chucnk we have to use hash sign
 
-```{
+White space is for notes - take notes here as you wish! 
 
+```{r}
+# Notes
+#Grey space is a code chunk for writing code
+#version()
+#anything 
 ```
-
 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
 # Install packages
-#install.packages(c("here","tidyverse","dplyr","readxl"))
-
-#install.packages("remotes")                        # if not already installed
-#remotes::install_github("jknappe/quantitray")      # installs the package directly from GitHub
+# install.packages(c("here","tidyverse","dplyr","readxl"))
+# install.packages("remotes")                        # if not already installed
+# remotes::install_github("jknappe/quantitray")      # installs the package directly from GitHub
 
 # Load libraries
 library(here)
@@ -28,17 +30,22 @@ library(dplyr)
 library(quantitray)
 library(readxl)
 
+
+#remove.packages("gtable")
+#install.packages("ggplot2")
+#library(gtable)
 # Check current directory & set new directory if needed
 here()
 ```
 
 ## Training Module 1. Microbiology lab results and qPCR data cleaning
-In this session, we will clean and process .csv files including 
+In this session, we will clean and process .csv files  
 
 #### Read data into RStudio
 We will be using the here() package which relates all file paths to the directory in which this script is stored. This makes it easier for people to collaborate across computers, as long as the folder structure is the same. We recommend storing all data on the cloud (Box or Drive) and using the desktop Box/Drive app to be able to directly access your Box/Drive folders from your local computer. For this workshop, you will be utilizing the folder on your desktop that you created with the forked GitHub repository.   
 ```{r read.dat}
-#test<- read_csv("Users/Lenovo/Documents/GitHub/Pathogen-Data-Analysis-Training/survey_data_simulatied.csv")
+# Test - AVOID DOING THIS!!! everyone has different file paths so if someone else uses this script with your filepath included, it will be more work for them to change all of the filepaths in the script  
+# test <- read_csv("C:/Users/hkamato/Documents/GitHub/DHKUH Data Analysis Training/simulated_data/survey_data_simulated.csv")
 
 # Read microbiological data
 # (there are also packages you can install and load, like read_xl(), for reading .xlsx files)
@@ -50,7 +57,8 @@ tac_folder <- here("simulated_data", "simulated_cards")
 # Read and combine all TAC .xlsx output files into tac_raw
 tac_raw <- list.files(tac_folder, full.names = TRUE, pattern = "\\.xlsx$") %>%
   map_dfr(read_csv, .id = "source_file", show_col_types = FALSE)
-#remove test data
+
+# Remove test data
 rm(test)
 ```
 
@@ -61,9 +69,11 @@ rm(test)
 names(microbio_df) # variable names
 summary(microbio_df) # summary of data
 head(microbio_df, n=8) # view top 8 rows
-unique(microbio_df$sample_id) %>% length() # number of samples
+unique(microbio_df$sample_id) %>% length(.) # number of samples
 table(microbio_df$sample_type) # number of rows in dataset by type
-#View(microbio_df) #it shows all chart
+View(microbio_df)
+
+# Add code here to view the data
 
 ```
 
@@ -80,11 +90,10 @@ microbio_clean <- microbio_df %>%
   ) %>%
   dplyr::select(-c(sample_id, plate_weight, wet_weight, dry_weight, wet_soil_mass, dry_soil_mass))
 
-# Workshop task: Check your new variables,-c substraction
+# Workshop task: Check your new variables
 # Add code here to check soil_moisture (continuous) and sample_type (categorical)
-table(microbio_clean$sample_type)#frequency table for categorial
-summary(microbio_clean$soil_moisture)#summary of cotiunuous vars
-
+summary(microbio_clean$soil_moisture)
+table(microbio_clean$sample_type)
 ```
 
 #### Estimate MPN from IDEXX data
@@ -92,32 +101,70 @@ We will now use the small and large cell counts to estimate most probable number
 ```{r mpn.task}
 # Workshop task: Add MPN estimates using quantify_mpn()
 # Hint: type help("quantify_mpn") in console to get information about how to use the command
-microbio_clean <- microbio_clean %>%
+microbio_clean_v2 <- microbio_clean %>%
   mutate(
     # Add total coliform and E. coli MPN estimation (with 95% confidence limits) code here
-    tc_mpn = 
-    tc_mpn_lo = 
-    tc_mpn_hi = 
+    # Total coliform, tc_mpn is new variable
+    tc_mpn = quantify_mpn(total_coliform_large_cell_count, total_coliform_small_cell_count, 
+                          method = "qt-2000"),
+    tc_mpn_lo = quantify_95lo(total_coliform_large_cell_count, total_coliform_small_cell_count, 
+                              method = "qt-2000"),
+    tc_mpn_hi = quantify_95hi(total_coliform_large_cell_count, total_coliform_small_cell_count, 
+                              method = "qt-2000"),
+    
+    ecoli_mpn = quantify_mpn(
+      e_coli_large_cell_count, 
+      e_coli_small_cell_count,
+      method = "qt-2000"),
+    ecoli_mpn_lo = quantify_95lo(
+      e_coli_large_cell_count, 
+      e_coli_small_cell_count,
+      method = "qt-2000"),
+    ecoli_mpn_hi =quantify_95hi(
+      e_coli_large_cell_count, 
+      e_coli_small_cell_count,
+      method = "qt-2000"), 
 
-    ecoli_mpn = 
-    ecoli_mpn_lo = 
-    ecoli_mpn_hi = 
+    ar_tc_mpn = quantify_mpn(
+      ar_total_coliform_small_cell_count,
+      ar_total_coliform_large_cell_count,
+      method = "qt-2000"),
+    ar_tc_mpn_lo = quantify_95lo(
+      ar_total_coliform_small_cell_count,
+      ar_total_coliform_large_cell_count,
+      method = "qt-2000"),
+    ar_tc_mpn_hi = quantify_95hi(
+      ar_total_coliform_small_cell_count,
+      ar_total_coliform_large_cell_count,
+      method = "qt-2000"),
 
-    ar_tc_mpn = 
-    ar_tc_mpn_lo = 
-    ar_tc_mpn_hi = 
-
-    ar_ecoli_mpn = 
-    ar_ecoli_mpn_lo = 
-    ar_ecoli_mpn_hi = 
+    ar_ecoli_mpn = quantify_mpn(
+      ar_e_coli_small_cell_count,
+      ar_e_coli_large_cell_count,
+       method = "qt-2000"),
+    ar_ecoli_mpn_lo =quantify_95lo( 
+      ar_e_coli_small_cell_count,
+      ar_e_coli_large_cell_count,
+       method = "qt-2000"),
+    ar_ecoli_mpn_hi =quantify_95hi(
+      ar_e_coli_small_cell_count,
+      ar_e_coli_large_cell_count,
+       method = "qt-2000") 
   )
+names(microbio_clean_v2)
 ```
 
 ```{r mpn.check}
 # Check dataset
-microbio_clean %>% 
+microbio_clean_v2 %>% 
   select(household_id, sample_type, tc_mpn:ar_ecoli_mpn_hi) %>% 
-  head(10)
+  head(10) # view the first 10 rows of the dataframe
+microbio_clean<-microbio_clean_v2
+microbio_clean %>%
+ microbio_clean_v2 %>% 
+  select(household_id, sample_type, tc_mpn:ar_ecoli_mpn_hi) %>% 
+  head(10) 
+  
 ```
 
 ```{r mpn.nafix}
@@ -130,6 +177,9 @@ microbio_clean <- microbio_clean %>%
     ec_detect = if_else(ecoli_mpn > 0, 1, 0),
     ar_ec_detect = if_else(ar_ecoli_mpn > 0, 1, 0)
   )
+table(microbio_clean$tc_detect)
+#bonus- check variable frequency by sample type
+table(microbio_clean$sample_type,microbio_clean$tc_detect)
 ```
 
 #### Transform ESBL CFU results
@@ -147,16 +197,16 @@ microbio_clean2 <- microbio_clean %>%
     adjusted_esbl_cfu = case_when( # for 
       sample_type %in% c("effluent", "compost") ~ esbl_e_coli_cfu_adj / (1 - moisture_fraction) / 2,
       sample_type == "produce" ~ esbl_e_coli_cfu_adj,
-      TRUE ~ NA_real_),
+      TRUE ~ NA_real_),# anything else is NA
     
     # Add code to create new log_adjusted_esbl_cfu variable here 
-    log_adjusted_esbl_cfu = 
+    log_adjusted_esbl_cfu = log10(adjusted_esbl_cfu)
       
   )
 
 # Add code to check distribution of log adjusted esbl cfu variable here 
 # Hint: use a histogram
-
+hist(microbio_clean2$log_adjusted_esbl_cfu)
 ```
 
 ``` {r hist.esbl.samples}
@@ -175,16 +225,23 @@ microbio_clean2 <- microbio_clean2 %>%
     # Add adjustments for LOD, moisture, and sample volume for compost and effluent samples
     across(c(tc_mpn, ar_tc_mpn, ecoli_mpn, ar_ecoli_mpn),
                 ~ if_else(. == 0, 0.5, .), # set 0s to 1/2 lower limit of detection (1 MPN) 
-                .names = "{.col}_adj")) %>%
+                .names = "{.col}_adj")) %>% # add "_adj" to the end of each new variable name
   mutate(
-    across(matches("_adj$"), # only for adjusted variables 
+    across(matches("_adj$"), # only for variables that end in "adj"  
                 ~ if_else(sample_type %in% c("compost", "effluent"), . / (1 - moisture_fraction) / 2, . / 2),
                 .names = "adjusted_{.col}")) %>%
-  # Add code for log10 transformation to all adjusted MPN variables here
-  
+  # Add code to create new log10-transormed variables for all adjusted MPN variables here
+  mutate(
+    across(matches("^adjusted_.*_adj$"),~log10(.)+1,.names="log_{.col}")
+    
   )
-
+names(microbio_clean2)
 # Add code to check distribution of unadjusted vs. adjusted MPN variables using a histogram here
+hist(microbio_clean2$log_adjusted_tc_mpn_adj)
+hist(microbio_clean2$log_adjusted_esbl_e_coli_cfu_adj)
+
+microbio_clean2$log_adjusted_esbl_e_coli_cfu_adj<-
+microbio_clean2$log_adjusted_esbl_e_coli_cfu_adj+1
 
 ```
 
